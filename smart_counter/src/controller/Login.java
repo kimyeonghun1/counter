@@ -44,10 +44,10 @@ public class Login extends HttpServlet {
 			
 			
 			
-			response.sendRedirect("home.jsp");
+			response.sendRedirect("home1.jsp");
 		}else {
 			
-			response.sendRedirect("home.jsp");
+			response.sendRedirect("home1.jsp");
 			
 		}
 		
