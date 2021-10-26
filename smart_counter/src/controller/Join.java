@@ -30,16 +30,17 @@ public class Join extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		
-		String age = request.getParameter("age");
-		String gender = request.getParameter("gender");
+		String nick = request.getParameter("nick");
 		String height = request.getParameter("height");
 		String kg = request.getParameter("kg");
+		String gender = request.getParameter("gender");
+		String age = request.getParameter("age");
+		String bmi = request.getParameter("bmi");
 		
-		MemberVO vo = new MemberVO(id, pw, height, kg, age, gender);
+	
 		MemberDAO dao= new MemberDAO();
 		
-		int cnt = dao.Join(id, pw, age, gender, height, kg);
+		int cnt = dao.Join(id, pw, nick, height, kg, gender, age, bmi);
 		
 		if(cnt > 0) {
 			System.out.println("회원가입성공");

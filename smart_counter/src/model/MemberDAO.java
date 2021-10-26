@@ -27,9 +27,9 @@ public class MemberDAO {
 			// 1. 드라이버 동적 로딩
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String user = "hr";
-			String password = "hr";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String user = "campus_a_5_1025";
+			String password = "smhrd5";
 			// 2. 데이터 베이스 연결 객채(Connection) 생성
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
@@ -60,21 +60,23 @@ public class MemberDAO {
 
 	}
 
-	public int Join(String id, String pw, String age, String gender, String height, String kg ) {
+	public int Join(String id, String pw, String nick, String height, String kg, String gender, String age, String bmi) {
 
 		try {
 
 			connection();
 
 			// 4. SQL문 준비
-			String sql = "insert into MEMBER(id,pw,age,gender,height,kg) values(?,?,?,?,?,?)";
+			String sql = "insert into MEMBER(id,pw,nick,height,kg,gender,age,bmi) values(?,?,?,?,?,?,?,?)";
 			pst = conn.prepareStatement(sql);
 			pst.setString(1, id);
 			pst.setString(2, pw);
-			pst.setString(3, age);
-			pst.setString(4, gender);
-			pst.setString(5, height);
-			pst.setString(6, kg);
+			pst.setString(3, nick);
+			pst.setString(4, height);
+			pst.setString(5, kg);
+			pst.setString(6, gender);
+			pst.setString(7, age);
+			pst.setString(8, bmi);
 
 			// 5. SQL문 명령 후 처리
 			cnt = pst.executeUpdate();
@@ -92,7 +94,7 @@ public class MemberDAO {
 	
 	
 		
-		public MemberVO login(String email, String pw) {
+		public MemberVO login(String id, String pw) {
 
 			try {
 				connection();
@@ -105,7 +107,7 @@ public class MemberDAO {
 				pst = conn.prepareStatement(sql);
 
 				// 4. 바인드 변수 채워두기
-				pst.setString(1, email);
+				pst.setString(1, id);
 				pst.setString(2, pw);
 
 				// 5. sql문 실행 후 결과 처리
@@ -116,14 +118,16 @@ public class MemberDAO {
 				if (rs.next()) {
 					System.out.println("로그인성공");
 
-					String id= rs.getString("id"); 
-					String get_pw= rs.getString("pw");  
+					String get_id= rs.getString("id"); 
+					String get_pw= rs.getString("pw");
+					String nick = rs.getString("nick");
 					String height = rs.getString("height"); 
 					String kg = rs.getString("kg"); 
+					String gender = rs.getString("gender");
 					String age= rs.getString("age"); 
-					String gender= rs.getString("gender"); 
+					String bmi= rs.getString("bmi"); 
 
-					vo = new MemberVO(id, get_pw, height, kg, age, gender);
+					vo = new MemberVO(get_id, get_pw, nick, height, kg, gender, age, bmi);
 
 					// 따로 따로 적어줘도 상관은 없어
 //					session.setAttribute("id", value);
@@ -204,12 +208,14 @@ public class MemberDAO {
 
 					String id = rs.getString("id");
 					String pw = rs.getString("pw");
-					String height = rs.getString("height");
-					String kg = rs.getString("kg");
-					String age = rs.getString("age");
+					String nick = rs.getString("nick");
+					String height = rs.getString("height"); 
+					String kg = rs.getString("kg"); 
 					String gender = rs.getString("gender");
+					String age= rs.getString("age"); 
+					String bmi= rs.getString("bmi"); 
 
-					vo = new MemberVO(id, pw, height, kg, age, gender);
+					vo = new MemberVO(id, pw, nick, height, kg, gender, age, bmi);
 
 					al.add(vo);
 

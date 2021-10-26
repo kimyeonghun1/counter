@@ -7,18 +7,21 @@ public class MemberVO {
 	private String nick;
 	private String height;
 	private String kg;
-	private String age;
 	private String gender;
+	private String age;
+	private String bmi;
 	
-	public MemberVO(String id, String pw, String height, String kg, String age, String gender) {
-		
+	public MemberVO(String id, String pw, String nick, String height, 
+			String kg, String gender, String age,
+			String bmi) {
 		this.id = id;
 		this.pw = pw;
 		this.nick = nick;
 		this.height = height;
 		this.kg = kg;
-		this.age = age;
 		this.gender = gender;
+		this.age = age;
+		this.bmi = bmi;
 	}
 
 	public String getId() {
@@ -41,13 +44,19 @@ public class MemberVO {
 		return kg;
 	}
 
+	public String getGender() {
+		return gender;
+	}
+
 	public String getAge() {
 		return age;
 	}
 
-	public String getGender() {
-		return gender;
+	public String getBmi() {
+		return bmi;
 	}
+
+	
 	
 	
 	
