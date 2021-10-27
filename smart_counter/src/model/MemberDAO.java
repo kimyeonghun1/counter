@@ -198,7 +198,7 @@ public class MemberDAO {
 			try {
 				connection();
 
-				String sql = "select id, pw, height, kg, age, gender FROM MEMBER";
+				String sql = "select id, pw,nick, height, kg, gender,age,bmi FROM MEMBER";
 
 				pst = conn.prepareStatement(sql);
 

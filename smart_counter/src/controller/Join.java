@@ -37,11 +37,14 @@ public class Join extends HttpServlet {
 		String age = request.getParameter("age");
 		String bmi = request.getParameter("bmi");
 		
+		
+	
+		
 	
 		MemberDAO dao= new MemberDAO();
 		
 		int cnt = dao.Join(id, pw, nick, height, kg, gender, age, bmi);
-		
+				
 		if(cnt > 0) {
 			System.out.println("회원가입성공");
 			response.sendRedirect("home1.jsp");
