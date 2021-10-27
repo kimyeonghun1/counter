@@ -25,7 +25,8 @@
 							<tr>
 								<td>ID</td>
 								<td>닉네임</td>
-								<td>삭제</td>	
+								<td>삭제하기</td>
+							<!-- <td>수정하기</td> 기능 미구현 -->	
 							</tr>
 							<% for (int i=0; i<al.size(); i++){ %>		
 							
@@ -34,6 +35,8 @@
 							<td><%=al.get(i).getId() %></td>
 							<td><%=al.get(i).getNick() %></td>
 							<td><a href="Delete?id=<%=al.get(i).getId()%>">삭제</a></td>
+						<!-- <td><a href="Update?id=<%=al.get(i).getId()%>">수정</a></td> 기능 미구현 -->	
+							
 							</tr>
 							
 							<% }%>

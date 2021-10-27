@@ -39,7 +39,7 @@
 				%>
 				<li class="u-nav-item"><a
 					class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-					href="SelectAll.jsp" style="padding: 10px 32px;">전체 회원정보 보기</a></li>
+					href="SelectAll.jsp" style="padding: 10px 32px;">전체 회원 관리하기</a></li>
 				<%
 					}
 				%>
