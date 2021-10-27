@@ -256,6 +256,57 @@ public class MemberDAO {
 		}
 		
 		
+		public boolean idCheck(String id) {
+			
+
+			
+			
+			try {
+				connection();
+
+				String sql = "select id FROM MEMBER where id=?";
+				
+
+				pst = conn.prepareStatement(sql);
+
+				// 4. 바인드 변수 채워두기
+				pst.setString(1, id);
+				
+				// 5. sql문 실행 후 결과 처리
+				rs = pst.executeQuery();
+			
+				if (rs.next()) {
+					// 입력한 이메일을 사용할 수 없을때
+					
+					check =true;
+					
+
+				} else {
+					// 입력한 이메일을 사용할 수 있을때
+					
+					check=false; 
+					//초기값은 false라 안적어도 되는데 직관적으로 보기 편하게
+				}
+				
+
+			} catch (Exception e) {
+				
+				System.out.println("로그인실패");
+				e.printStackTrace();
+				
+			} finally {
+
+				close();
+
+			}
+			
+			return check;
+			
+		
+			
+		}
+		
+		
 		
 	
 
