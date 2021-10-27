@@ -61,11 +61,11 @@ public class Update extends HttpServlet {
 		
 		if(cnt>0) {
 			System.out.println("수정성공");
-			response.sendRedirect("home1.jsp");
+			response.sendRedirect("Home.jsp");
 			
 		}else {
 			System.out.println("수정실패");
-			response.sendRedirect("home1.jsp");
+			response.sendRedirect("Home.jsp");
 		}
 		
 		
