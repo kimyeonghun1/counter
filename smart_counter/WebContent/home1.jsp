@@ -51,7 +51,7 @@
 					href="Logout" style="padding: 10px 32px;">로그아웃</a></li>
 				<li class="u-nav-item"><a
 					class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-					href="Update.jsp" style="padding: 10px 32px;">회원정보 수정</a></li>
+					href="Change.jsp" style="padding: 10px 32px;">회원정보 수정</a></li>
 
 
 				<%

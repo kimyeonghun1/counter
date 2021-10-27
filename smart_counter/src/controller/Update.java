@@ -24,11 +24,8 @@ public class Update extends HttpServlet {
 		HttpSession session = request.getSession(); // 세션 객체 생성
 		MemberVO vo = (MemberVO)session.getAttribute("member"); // 현재 로그인한 사용자의(수정전) 정보
 		
-		if(request.getParameter("id")!=null) {
-			response.sendRedirect("Update.jsp");
-		}
-		
-		
+	
+	
 		String id = vo.getId();
 		String pw = request.getParameter("pw");
 		String age = request.getParameter("age"); 
