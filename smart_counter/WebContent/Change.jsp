@@ -56,7 +56,7 @@
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
         <h4 class="mb-3">회원정보수정</h4>
-        <form class="validation-form" novalidate action="Update">
+        <form class="validation-form" action="Update">
           <div class="row">
             
            

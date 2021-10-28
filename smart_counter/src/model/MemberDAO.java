@@ -14,8 +14,8 @@ public class MemberDAO {
 
 	Connection conn = null;
 	PreparedStatement pst = null;
-	int cnt;
 	ResultSet rs = null;
+	int cnt;
 	MemberVO vo;
 	boolean check;
 	ArrayList<MemberVO> al = null;
