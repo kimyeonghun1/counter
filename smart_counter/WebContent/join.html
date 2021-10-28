@@ -11,18 +11,15 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+	
   <style>
     body {
+    	background-image: url('');
+      background: #40E0D0;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-      min-height: 100vh;
-        
-      /*위에서 아래로 진행되는 선형 그래디언트*/
-      background: -webkit-gradient(linear, left bottom, right top, from(#92b5db), to(#1d466c));
-      background: -webkit-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
-      background: -moz-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
-      background: -o-linear-gradient(bottom left, #92b5db 0%, #1d466c 100%);
-      background: linear-gradient(to top right, #92b5db 0%, #1d466c 100%);
+	
     }
 
     .input-form {
@@ -31,13 +28,17 @@
       margin-top: 80px;
       padding: 32px;
 
-      background: #fff;
+     
+      background: #fffbd5;  /* fallback for old browsers */
+     
+
+
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
       border-radius: 10px;
-      -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-      -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+      -webkit-box-shadow: 0 8px 20px 0 rgba(175, 122, 122, 0.15);
+      -moz-box-shadow: 0 8px 20px 0 rgba(100, 58, 58, 0.15);
+      box-shadow: 0 8px 20px 0 rgba(36, 3, 3, 0.15)
     }
   </style>
 </head>
@@ -47,6 +48,7 @@
   <div class="container">
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
+
         <h4 class="mb-3">회원가입</h4>
         <form class="validation-form" novalidate>
           <div class="row">
@@ -62,9 +64,9 @@
             
             
             
+      
             
-            
-           
+ 
             <div class="col-md-6 mb-3">
               <label for="pw">PW</label>
               <input name="pw" type="password" class="form-control" id="pw" placeholder="PW를 입력해 주세요." value="" required>
