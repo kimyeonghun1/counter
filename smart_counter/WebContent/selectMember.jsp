@@ -44,7 +44,8 @@
 							<td><%=al.get(i).getId()%></td>
 							<td><%=al.get(i).getPw()%></td>
 								
-							<td><a href="DeleteService?email=<%=al.get(i).getId()%>">삭제</a></td>
+							<td><a href="DeleteService?email=
+								<%=al.get(i).getId()%>">삭제</a></td>
 							</tr>
 							
 							<% }%>

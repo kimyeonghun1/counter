@@ -32,10 +32,10 @@ body {
 	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
 }
 
-#a {
+ #a {
 	margin-bottom: 5.5rem;
 	margin-top: 100px;
-}
+} 
 </style>
 
 
@@ -46,7 +46,7 @@ body {
 <%
 		MemberDAO dao = new MemberDAO();
 		ArrayList<MemberVO> al = dao.selectAll();
-	//	System.out.println(al.size()); Àß µé¾î¿Ô´ÂÁö È®ÀÎÇÏ±â À§ÇØ¼­ ¾²´Â°Å!
+	//	System.out.println(al.size()); ï¿½ï¿½ ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½Â°ï¿½!
 	
 	%>
 
@@ -66,14 +66,14 @@ body {
 
 
 
-				<h2 align="center" id="a"  class="p-3 mb-2 bg-warning text-dark">È¸¿ø°ü¸® ½Ã½ºÅÛ</h2>
-				<table class="table table-warning table-striped">
+				<h2 align="center" id="a"  class="p-3 mb-2 bg-warning text-dark">È¸¿øÁ¤º¸°ü¸®</h2>
+				<table class="table table-warning table-striped" border-spacing = "10px" >
 					<thead>
 						<tr>
-							<th scope="col"></th>
-							<th scope="col">ID</th>
-							<th scope="col">PW</th>
-							<th scope="col">»èÁ¦ÇÏ±â</th>
+							<th align = "center" scope="col" ></th>
+							<th align = "center" scope="col" >ID</th>
+							<th align = "center" scope="col" >PW</th>
+							<th align = "center" scope="col"> »èÁ¦</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -83,11 +83,12 @@ body {
 							<th scope="row"><%=i+1 %></th>
 							<td><%=al.get(i).getId()%></td>
 							<td><%=al.get(i).getPw()%></td>
-							<td><a href="DeleteService?email=<%=al.get(i).getId()%>">»èÁ¦</a></td>
+							<td><a align = "center" href="DeleteService?email=<%=al.get(i).getId()%>">»èÁ¦</a></td>
 						</tr>
 						<% }%>
-					
-				</table>
+						</table>
+						
+						
 				<form action="Home.jsp" >
 				<button  type="submit" class="btn btn-warning btn btn-primary btn-lg" >È¨À¸·Î</button>
 				</form>
