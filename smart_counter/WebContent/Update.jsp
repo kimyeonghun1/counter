@@ -28,6 +28,7 @@
 		키<input value="<%=vo.getHeight() %>" type="text" name="height"><br>
 		몸무게<input value="<%=vo.getKg() %>" type="text" name="kg"><br>
 		나이<input value="<%=vo.getAge() %>" type="text" name="age" ><br>
+		BMI<input value="<%=vo.getBMI() %>" type="text" name="bmi" ><br>
 		남자<input type="radio" name="gender" value="M" required="required">
      	여자<input type="radio" name="gender" value="W" required="required">
 		<input type="submit" value="수정">

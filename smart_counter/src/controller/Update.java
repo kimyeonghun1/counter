@@ -31,6 +31,7 @@ public class Update extends HttpServlet {
 		String gender = request.getParameter("gender");
 		String height = request.getParameter("height");
 		String kg = request.getParameter("kg");
+		String bmi = request.getParameter("bmi");
 		
 		System.out.println(age);
 		
@@ -53,10 +54,12 @@ public class Update extends HttpServlet {
 		if(kg.equals("")) {
 			kg=vo.getKg();
 		}
-		
+		if(bmi.equals("")) {
+			kg=vo.getBMI();
+		}
 	
 		
-		int cnt=dao.Update(pw, age, gender, height, kg, id);
+		int cnt=dao.Update(pw, age, gender, height, kg, id, bmi);
 		
 		if(cnt>0) {
 			System.out.println("수정성공");

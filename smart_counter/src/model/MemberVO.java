@@ -52,7 +52,7 @@ public class MemberVO {
 		return age;
 	}
 
-	public String getBmi() {
+	public String getBMI() {
 		return bmi;
 	}
 

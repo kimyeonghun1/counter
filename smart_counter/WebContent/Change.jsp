@@ -107,7 +107,7 @@
 
           
 
-          <div class="mb-3" style="display:block">
+          <div class="col-md-6 mb-3" style="display:block">
         <label for="gender">성별<span class="text-muted" style="text-align:center; display:block; margin: 20px;" ></span></label>
                남자 <input type="radio" name="gender" value="M" required="required">    여자 <input type="radio" name="gender" value="W" required="required">
           </div>

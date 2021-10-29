@@ -157,14 +157,14 @@ public class MemberDAO {
 		
 	}
 	
-		public int Update(String pw, String age, String gender, String height, String kg, String id) {
+		public int Update(String pw, String age, String gender, String height, String kg, String id, String bmi) {
 
 			try {
 
 				connection();
 
 				// 4. SQL문 준비
-				String sql = "update MEMBER set pw=?,age=?,gender=?,height=?,kg=? where id=?";
+				String sql = "update MEMBER set pw=?,age=?,gender=?,height=?,kg=?,bmi=? where id=?";
 				
 				pst = conn.prepareStatement(sql);
 				
@@ -173,7 +173,9 @@ public class MemberDAO {
 				pst.setString(3, gender);
 				pst.setString(4, height);
 				pst.setString(5, kg);
-				pst.setString(6, id);
+				pst.setString(7, id);
+				pst.setString(6, bmi);
+				
 
 				// 5. SQL문 명령 후 처리
 				cnt = pst.executeUpdate();
