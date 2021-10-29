@@ -63,8 +63,8 @@ div#app .card:hover {
 div#app .card a {
   text-decoration: none;
   padding: 12px;
-  color: #03A9F4;
-  font-size: 24px;
+  color: gray;
+  font-size: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,7 +73,7 @@ div#app .card a img {
   height: 90px;
 }
 div#app .card a small {
-  font-size: 10px;
+  font-size: 8px;
   padding: 4px;
 }
 div#app .hotpink {
