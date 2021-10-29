@@ -79,7 +79,7 @@
 						%>
 
 						<li class="u-nav-item"><%=vo.getId()%>님 환영합니다.</li>
-						<li class="u-nav-item"><a href="Home.html"
+						<li class="u-nav-item"><a href="#"
 							class="u-button-style u-nav-link" style="padding: 10px 66px;">Mypage</a></li>
 						<li class="u-nav-item"><a href="Logout"
 							class="u-button-style u-nav-link" style="padding: 10px 66px;">로그아웃</a></li>
@@ -182,7 +182,7 @@
 						<div
 							class="u-container-layout u-similar-container u-container-layout-2">
 							<!-- <p align="center">자세</p> -->
-							<a href="#">자세</a>
+							<a href="link.html">자세</a>
 							<span class="u-icon u-icon-circle u-icon-2"><svg
 									class="u-svg-link" preserveAspectRatio="xMidYMin slice"
 									viewBox="0 0 512 512" style="">
