@@ -87,7 +87,7 @@
 							class="u-button-style u-nav-link" style="padding: 10px 66px;">정보수정</a></li>
 						<%
 							if (vo.getId().equals("admin")) {
-						%><li class="u-nav-item"><a href="SelectTest.jsp"
+						%><li class="u-nav-item"><a href="SelectAll.jsp"
 							class="u-button-style u-nav-link" style="padding: 10px 66px;">전체회원관리하기</a></li>
 						<%
 							}
