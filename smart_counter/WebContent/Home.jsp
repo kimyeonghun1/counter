@@ -157,7 +157,7 @@
 						class="u-container-style u-list-item u-palette-1-base u-repeater-item u-list-item-1">
 						<div
 							class="u-container-layout u-similar-container u-container-layout-1">
-							<a href="#">운동</a>
+							<a href="target.html">목표갯수 설정</a>
 							<!-- <p align="center">운동</p> -->
 							<span class="u-icon u-icon-circle u-icon-1"><svg
 									class="u-svg-link" preserveAspectRatio="xMidYMin slice"
@@ -202,7 +202,7 @@
 						<div
 							class="u-container-layout u-similar-container u-container-layout-3">
 							<!-- <p align="center">랭킹</p> -->
-							<a href="#">랭킹</a>
+							<a href="grf.jsp">그래프</a>
 							<span class="u-icon u-icon-circle u-icon-3"> <svg
 									class="u-svg-link" preserveAspectRatio="xMidYMin slice"
 									viewBox="0 0 60 60" style="">
@@ -259,7 +259,7 @@
 						<div
 							class="u-container-layout u-similar-container u-container-layout-4">
 							<!-- <p align="center">달력</p> -->
-							<a href="#">달력</a>
+							<a href="#">출석체크</a>
 							<span class="u-icon u-icon-circle u-icon-4"><svg
 									class="u-svg-link" preserveAspectRatio="xMidYMin slice"
 									viewBox="0 0 55.867 55.867" style="">
