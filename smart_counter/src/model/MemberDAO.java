@@ -10,6 +10,8 @@ import java.util.ArrayList;
 
 
 
+
+
 public class MemberDAO {
 
 	Connection conn = null;
@@ -17,8 +19,11 @@ public class MemberDAO {
 	ResultSet rs = null;
 	int cnt;
 	MemberVO vo;
+	GraphVo vo1;
+	
 	boolean check;
 	ArrayList<MemberVO> al = null;
+	ArrayList<GraphVo> al1 = null;
 
 	public void connection() {
 
@@ -307,6 +312,63 @@ public class MemberDAO {
 		
 			
 		}
+		
+		
+		
+		public ArrayList<GraphVo> R_COUNT(String id) {
+			
+			al1 = new ArrayList<GraphVo>();
+
+			try {
+				connection();
+
+				String sql = "select id,R_COUNT,day from history where id = ? ";
+				// 필요한것만 가지고 오기 추천
+
+				// 3. sql 실행 객체(PrepapredStatement) 객체생성
+
+				pst = conn.prepareStatement(sql);
+
+				// 4. 바인드 변수 채워두기
+				pst.setString(1, id);
+				
+
+				// 5. sql문 실행 후 결과 처리
+				rs = pst.executeQuery();
+				// 데이터 담고 커리 받아오고
+
+				// rs.next() -> true / false
+				while(rs.next()) {
+					System.out.println("가져오기 성공");
+
+					String get_id= rs.getString("id"); 
+					int get_R_COUNT= rs.getInt("R_COUNT");
+					String get_day= rs.getString("day");
+					
+					vo1 = new GraphVo(get_id, get_R_COUNT, get_day);
+
+					
+					al1.add(vo1);
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println("가져오기 실패ㅠㅠ");
+
+				e.printStackTrace();
+			} finally {
+
+				close();
+
+			}
+			System.out.println(al);
+			return al1;
+
+
+		}
+		
+		
+		
 		
 		
 		
