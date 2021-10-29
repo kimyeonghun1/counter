@@ -91,6 +91,14 @@
                 pw를 입력해주세요.
                 </div>
               </div>
+              
+               <div class="col-md-6 mb-3">
+                <label for="bmi">BMI</label>
+                <input name="bmi" type="text" class="form-control" id="bmi" placeholder="BMI를 입력해주세요." value="" required="required">
+                <div class="invalid-feedback">
+                BMI를 입력해주세요.
+                </div>
+              </div>
      
 
           </div>
