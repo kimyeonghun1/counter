@@ -156,7 +156,8 @@
 						class="u-container-style u-list-item u-palette-1-base u-repeater-item u-list-item-1">
 						<div
 							class="u-container-layout u-similar-container u-container-layout-1">
-							<p align="center">운동</p>
+							<a href="#">운동</a>
+							<!-- <p align="center">운동</p> -->
 							<span class="u-icon u-icon-circle u-icon-1"><svg
 									class="u-svg-link" preserveAspectRatio="xMidYMin slice"
 									viewBox="0 0 368 368" style="">
@@ -180,7 +181,8 @@
 
 						<div
 							class="u-container-layout u-similar-container u-container-layout-2">
-							<p align="center">자세</p>
+							<!-- <p align="center">자세</p> -->
+							<a href="#">자세</a>
 							<span class="u-icon u-icon-circle u-icon-2"><svg
 									class="u-svg-link" preserveAspectRatio="xMidYMin slice"
 									viewBox="0 0 512 512" style="">
@@ -198,7 +200,8 @@
 						class="u-container-style u-list-item u-palette-1-base u-repeater-item u-video-cover u-list-item-3">
 						<div
 							class="u-container-layout u-similar-container u-container-layout-3">
-							<p align="center">랭킹</p>
+							<!-- <p align="center">랭킹</p> -->
+							<a href="#">랭킹</a>
 							<span class="u-icon u-icon-circle u-icon-3"> <svg
 									class="u-svg-link" preserveAspectRatio="xMidYMin slice"
 									viewBox="0 0 60 60" style="">
@@ -254,7 +257,8 @@
 						class="u-container-style u-list-item u-palette-1-base u-repeater-item u-video-cover u-list-item-4">
 						<div
 							class="u-container-layout u-similar-container u-container-layout-4">
-							<p align="center">달력</p>
+							<!-- <p align="center">달력</p> -->
+							<a href="#">달력</a>
 							<span class="u-icon u-icon-circle u-icon-4"><svg
 									class="u-svg-link" preserveAspectRatio="xMidYMin slice"
 									viewBox="0 0 55.867 55.867" style="">

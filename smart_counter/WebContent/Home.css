@@ -24,7 +24,7 @@
 }
 
 .u-section-1 .u-container-layout-1 {
-  padding: 30px;
+  padding: 50px;
 }
 
 .u-section-1 .u-icon-1 {
@@ -215,6 +215,7 @@
   .u-section-1 .u-container-layout-1 {
     padding-left: 10px;
     padding-right: 10px;
+    text-align: center;
   }
 
   .u-section-1 .u-container-layout-2 {
