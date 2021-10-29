@@ -79,12 +79,10 @@
 						%>
 
 						<li class="u-nav-item"><%=vo.getId()%>님 환영합니다.</li>
-						<li class="u-nav-item"><a href="#"
+						<li class="u-nav-item"><a href="Change.jsp"
 							class="u-button-style u-nav-link" style="padding: 10px 66px;">Mypage</a></li>
 						<li class="u-nav-item"><a href="Logout"
 							class="u-button-style u-nav-link" style="padding: 10px 66px;">로그아웃</a></li>
-						<li class="u-nav-item"><a href="Change.jsp"
-							class="u-button-style u-nav-link" style="padding: 10px 66px;">정보수정</a></li>
 						<%
 							if (vo.getId().equals("admin")) {
 						%><li class="u-nav-item"><a href="SelectAll.jsp"
@@ -95,6 +93,7 @@
 						<%
 							}
 						%>
+						
 					</ul>
 				</div>
 				<div class="u-custom-menu u-nav-container-collapse">
