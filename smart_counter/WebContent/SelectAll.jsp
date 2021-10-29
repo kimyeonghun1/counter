@@ -2,74 +2,110 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<html>
-	<head>
-	<title>Insert title here</title>
-	<meta charset="utf-8" />
-		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	
-			<style>
-    body {
-    
-	background: #40E0D0;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
 
-      min-height: 100vh;
-        
-     
-    }
-    
-  			</style>
-	</head>
-	
-	
-	<body style = "text-align: center;">
-	
-	<%
-	MemberDAO dao = new MemberDAO();
-	ArrayList<MemberVO> al = dao.selectAll();
+<style>
+body {
+	background: #40E0D0; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	min-height: 100vh;
+}
+
+.input-form {
+	max-width: 680px;
+	margin-top: 80px;
+	padding: 32px;
+	background: #fffbd5;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+}
+
+ #a {
+	margin-bottom: 5.5rem;
+	margin-top: 100px;
+} 
+</style>
+
+
+
+
+</head>
+
+<%
+		MemberDAO dao = new MemberDAO();
+		ArrayList<MemberVO> al = dao.selectAll();
+	//	System.out.println(al.size()); ï¿½ï¿½ ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½Â°ï¿½!
 	
 	%>
-	<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Menu -->
-					<nav id="Update">
-						<table >
-							<caption><h2>È¸¿ø°ü¸®ÆäÀÌÁö</h2></caption>
-							<tr>
-								<td>ID</td>
-								<td>´Ð³×ÀÓ</td>
-								<td>»èÁ¦ÇÏ±â</td>
-							<!-- <td>¼öÁ¤ÇÏ±â</td> ±â´É ¹Ì±¸Çö -->	
-							</tr>
-							<% for (int i=0; i<al.size(); i++){ %>		
-							
-							<tr>
-							
-							<td><%=al.get(i).getId() %></td>
-							<td><%=al.get(i).getNick() %></td>
-							<td><a href="Delete?id=<%=al.get(i).getId()%>">»èÁ¦</a></td>
-						<!-- <td><a href="Update?id=<%=al.get(i).getId()%>">¼öÁ¤</a></td> ±â´É ¹Ì±¸Çö -->	
-							
-							</tr>
-							
-							<% }%>
-		</table>
-	</nav>			
-</div>
-	<!-- Scripts -->
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+
+<body>
+
+
+	<div class="container">
+
+		<div class="row justify-content-center">
+			<div class="col-10">
+
+
+
+				<h2 align="center" id="a"  class="p-3 mb-2 bg-warning text-dark">È¸¿øÁ¤º¸°ü¸®</h2>
+				<table class="table table-warning table-striped" border-spacing = "10px" >
+					<thead>
+						<tr>
+							<th align = "center" scope="col" ></th>
+							<th align = "center" scope="col" >ID</th>
+							<th align = "center" scope="col" >PW</th>
+							<th align = "center" scope="col"> »èÁ¦</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% for (int i=0; i<al.size(); i++){ %>
+
+						<tr>
+							<th scope="row"><%=i+1 %></th>
+							<td><%=al.get(i).getId()%></td>
+							<td><%=al.get(i).getPw()%></td>
+							<td><a align = "center" href="DeleteService?email=<%=al.get(i).getId()%>">»èÁ¦</a></td>
+						</tr>
+						<% }%>
+						</table>
+						
+						
+				<form action="Home.jsp" >
+				<button  type="submit" class="btn btn-warning btn btn-primary btn-lg" >È¨À¸·Î</button>
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
 </body>
 </html>
