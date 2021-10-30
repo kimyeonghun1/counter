@@ -13,8 +13,7 @@
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 <meta charset='utf-8' />
 <!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
-<meta name="viewport"
-	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <!-- jquery CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- fullcalendar CDN -->
@@ -27,6 +26,7 @@
 <script
 	src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
 <style>
+
 /* body 스타일 */
 html, body {
 	overflow: hidden;
@@ -87,69 +87,69 @@ html, body {
 					nowIndicator : true, // 현재 시간 마크
 					dayMaxEvents : true, // 이벤트가 오버되면 높이 제한 (+ 몇 개식으로 표현)
 					locale : 'ko', // 한국어 설정
+					eventAdd: function(obj) { // 이벤트가 추가되면 발생하는 이벤트
+						console.log(obj);
+						},
+					eventChange: function(obj) { // 이벤트가 수정되면 발생하는 이벤트
+						console.log(obj);
+						},
+					eventRemove: function(obj){ // 이벤트가 삭제되면 발생하는 이벤트
+						console.log(obj);
+						},
+					select: function(arg) { // 캘린더에서 드래그로 이벤트를 생성할 수 있다.
+						var title = prompt('Event Title:');
+						if (title) {
+							calendar.addEvent({
+								title: title,
+								start: arg.start,
+								end: arg.end,
+								allDay: arg.allDay
+							})
+						}
+						calendar.unselect()
+						},
+						// 이벤트
+					events: []
+					/* eventRender:function(event, eventElement) {
+		                if(event.imageurl) {
+		                    eventElement.find("span.fc-title").prepend("<center><img src='" + event.imageurl + "'><center>");
+		                }
+		            } */
+
 				});
+					
 				// calendar에 이벤트 추가
 
 				//String[] arr = {"test1", "test2", "test3"};
 
-				var curDate = new Date();
-
-				var curTime = curDate.getFullYear() + "-"
-						+ (curDate.getMonth() + 1) + "-" + curDate.getDate()
-						+ " " + curDate.getHours() + ":" + curDate.getMinutes()
-						+ ":" + curDate.getSeconds();
-						
-
-				buttonElement.addEventListener('click', function(event) {
+				
+				$('#btn').on('click', function(event) {
+					
+					var curDate = new Date();
+	
+					var curTime = curDate.getFullYear() + "-"
+							+ (curDate.getMonth() + 1) + "-" + curDate.getDate()
+							+ " " + curDate.getHours() + ":" + curDate.getMinutes()
+							+ ":" + curDate.getSeconds();
+							
 					alert('출석 완료!');
-					const buttonElement = document.getElementById('btn');
 					calendar.addEvent({
-						title : "참잘했어요",
+						title : "참 잘했어요",
 						start : curTime, // 시작시간
 						end : curTime, // 끝나는 시간
+						/* imageurl : "./images/smart_logo.png", */
 						backgroundColor : "Red"
 					})
-
-					//
+					
+					
 				})
-					/* calendar.addEvent({
-					title : "참잘했어요",
-					start : curTime, // 시작시간
-					end : curTime, // 끝나는 시간
-					backgroundColor : "Red"
-				}) */
-
-				/* calendar.addEvent({
-					title : "윗몸 일으키기",
-					start : curTime, // 시작시간
-					end : curTime, // 끝나는 시간
-					backgroundColor : "Red"
-				})
-				calendar.addEvent({
-					title : "푸시 업",
-					start : curTime, // 시작시간
-					end : curTime, // 끝나는 시간
-					backgroundColor : "Red"
-				})
-				calendar.addEvent({
-					title : "풀 업",
-					start : curTime, // 시작시간
-					end : curTime, // 끝나는 시간
-					backgroundColor : "Red"
-				}) */
-
-				// 1. DB -> 21/10/27 -> replace() 이런 메소드 -> / : -
-				// '20' + '21-10-27;'
-				// --> 2021-10-27
-				// 2. event > ArrayList<VO> 
-				// for문 써서 반복하기
-				// 캘린더 랜더링
+				
 				calendar.render();
 			});
 		})();
 	</script>
 	<button id="btn">출석체크</button>
-<!-- 	<script src="external_cal.js"></script>  -->
+	<script src="external_cal.js"></script>
 
 </body>
 

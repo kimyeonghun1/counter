@@ -23,7 +23,7 @@
 			<script type="application/ld+json">{
 				"@context": "http://schema.org",
 				"@type": "Organization",
-				"name": "",
+				"name": "images/smart_logo.png",
 				"logo": "images/default-logo.png"
 			}</script>
 				<meta name="theme-color" content="#478ac9">
