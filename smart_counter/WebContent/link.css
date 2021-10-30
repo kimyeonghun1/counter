@@ -30,7 +30,7 @@ div#app .search-wrapper input {
   color: rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(0, 0, 0, 0.12);
   transition: 0.15s all ease-in-out;
-  background:#848484;
+ background:white;
 }
 div#app .search-wrapper input:focus {
   outline: none;
