@@ -202,7 +202,7 @@
 						<div
 							class="u-container-layout u-similar-container u-container-layout-3">
 							<!-- <p align="center">랭킹</p> -->
-							<a href="grf.jsp">그래프</a>
+							<a href="Graph2.html">그래프</a>
 							<span class="u-icon u-icon-circle u-icon-3"> <svg
 									class="u-svg-link" preserveAspectRatio="xMidYMin slice"
 									viewBox="0 0 60 60" style="">
