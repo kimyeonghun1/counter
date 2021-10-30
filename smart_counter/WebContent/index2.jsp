@@ -1,12 +1,10 @@
 <%@page import="model.MemberVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
- <%-- ¿Ã ¿ß∂˚ --%>   
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="EUC-KR"> <%-- ø©±‚ CHARSET∫Œ∫– ¡÷¿««ÿº≠ ∫π∫Ÿ«ÿ¡÷Ω√∏È µÀ¥œ¥Ÿ. øΩ ±◊∏Æ∞Ì! ¡˙πÆ 2∞≥ ¥ı ¿÷Ω¿¥œ¥Ÿ! --%>
-<title>Insert title here</title>
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -34,13 +32,12 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
 			<%
-				MemberVO vo = (MemberVO) session.getAttribute("member");
+				MemberVO vo = (MemberVO)session.getAttribute("member");
 			%>
 
 <body class="animsition">
-    <div class="top-bar">
+	 <div class="top-bar">
         <!-- top-bar -->
         <div class="container">
             <div class="row">
@@ -89,71 +86,53 @@
 
                         <div class="navigation pull-right" id="navigation">
                             <ul>
-                                <li class="active"><a href="index2.html" title="Home" class="animsition-link">Home</a></li>
-                                <li><a href="classes-list.html" title="Classes" class="animsition-link">∏Ò«•</a>
+                                <li class="active"><a href="index2.jsp" title="Home" class="animsition-link">Home</a></li>
+                                <li><a href="targett.html" title="Classes" class="animsition-link">Î™©Ìëú</a>
                                     <ul>
-                                        <li><a href="targett.html" title="Classes List">∏Ò«•∞≥ºˆ º≥¡§</a></li>
+                                        <li><a href="targett.html" title="Classes List">Î™©ÌëúÍ∞úÏàò ÏÑ§Ï†ï</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="blog-default.html" title="Blog" class="animsition-link">¿⁄ºº</a>
+                                <li><a href="blog-default.html" title="Blog" class="animsition-link">ÏûêÏÑ∏</a>
                                     <ul>
-                                        <li><a href="blog-default.html" title="Blog" class="animsition-link">¬¸∞ÌøµªÛ</a></li>
+                                        <li><a href="blog-default.html" title="Blog" class="animsition-link">Ï∞∏Í≥†ÏòÅÏÉÅ</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="testimonial.html" title="Features" class="animsition-link">±◊∑°«¡</a>
+                                <li><a href="Graph2.html" title="Features" class="animsition-link">Í∑∏ÎûòÌîÑ</a>
                                     <ul>
-                                        <li><a href="Graph2.html" title="Testimonial" class="animsition-link">¿œ∫∞±◊∑°«¡</a></li>
+                                        <li><a href="Graph2.html" title="Testimonial" class="animsition-link">ÏùºÎ≥ÑÍ∑∏ÎûòÌîÑ</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html" title="Contact Us" class="animsition-link">√‚ºÆ</a>
+                                <li><a href="calendar.html" title="Contact Us" class="animsition-link">Ï∂úÏÑù</a>
                                     <ul>
-                                        <li><a href="calendar.html" title="Testimonial" class="animsition-link">√‚ºÆµµ¿Â</a></li>
+                                        <li><a href="calendar.html" title="Testimonial" class="animsition-link">Ï∂úÏÑùÎèÑÏû•</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="style-guide.html" title="Contact Us" class="animsition-link">∑Œ±◊¿Œ</a>
+                                <li><a href="style-guide.html" title="Contact Us" class="animsition-link">Î°úÍ∑∏Ïù∏</a>
                                     <ul>
+                                    <%
+                                    	if (vo == null) {
+                                    %>
+                                        <li><a href="Join.jsp" title="Testimonial" class="animsition-link">ÌöåÏõêÍ∞ÄÏûÖ</a></li>
+                                        <li><a href="Login.html" title="Testimonial" class="animsition-link">Î°úÍ∑∏Ïù∏</a></li>
+                                    <%
+                                    	} else {
+                                    %>
+                                    	<li><a title="Testimonial" class="animsition-link"><%=vo.getId()%>Îãò ÌôòÏòÅÌï©ÎãàÎã§.</a></li>
+                                        <li><a href="Change.jsp" title="Testimonial" class="animsition-link">ÌöåÏõêÏ†ïÎ≥¥ÏàòÏ†ï</a></li>
+                                        <li><a href="Logout" title="Testimonial" class="animsition-link">Î°úÍ∑∏ÏïÑÏõÉ</a></li>
                                     
+                					
+                                    <%
+                                    	if (vo.getId().equals("admin")) {
+                                    %>
                                     
-                          
-						<%
-							if (vo == null) {
-						%>
-						
-						
-                                        <li><a href="Join.jsp" title="Testimonial" class="animsition-link">»∏ø¯∞°¿‘</a></li>
-                                        <li><a href="signin.html" title="Testimonial" class="animsition-link">∑Œ±◊¿Œ</a></li>
-						
-						<%
-							} else {
-						%>
-						<li><a title="Testimonial" class="animsition-link"><%=vo.getId()%>¥‘ »Øøµ«’¥œ¥Ÿ.</a></li>
-                        <li><a href="Change.jsp" title="Testimonial" class="animsition-link">»∏ø¯¡§∫∏ºˆ¡§</a></li>
-                        <li><a href="Logout" title="Testimonial" class="animsition-link">∑Œ±◊æ∆øÙ</a></li>
-                  
-                     <%
-                     if (vo.getId().equals("admin")) {
-                  %>
-                  
-                   <li><a href="SelectAll.jsp" title="Testimonial" class="animsition-link">¿¸√º»∏ø¯∞¸∏Æ«œ±‚</a></li>
-
-           
-                  <%
-                     }
-                  %>
-                  <%
-                     }
-                  %>
-						
-					</ul>
-				</div>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                              
-                                        
+                                    	<li><a href="SelectAll.jsp" title="Testimonial" class="animsition-link">Ï†ÑÏ≤¥ÌöåÏõêÍ¥ÄÎ¶¨ÌïòÍ∏∞</a></li>
+                                    <%
+                 					    }
+                					%>
+                  					<%
+                     					}
+                  					%>
 
                                     </ul>
                                 </li>
@@ -180,7 +159,7 @@
                 <html lang="en" >
                 <head>
                   <meta charset="UTF-8">
-                  <title>CodePen - A Pen by ±Ëøµ»∆</title>
+                  <title>CodePen - A Pen by ÍπÄÏòÅÌõà</title>
                   <link rel="stylesheet" href="./link.css">
                 
                 </head>
@@ -217,36 +196,76 @@
                         <div class="row">
                             <div class="container">
 
-                                <form class="target" action="target.html">
-                                  <h2 class="form-target-heading">ø¿¥√¿« øÓµø ∞πºˆ¥¬?</h2>
-                                          ∆»±¡«Ù∆Ï±‚<label for="push-ups" class="sr-only">∆»±¡«Ù∆Ï±‚</label>
-                                  <input name="push" type="text" id="push-ups" class="form-control" required>
-                                          ¿≠∏ˆ¿œ¿∏≈∞±‚<label for="sit-up" class="sr-only">¿≠∏ˆ¿œ¿∏≈∞±‚</label>
-                                  <input name="push" type="text" id="push-ups" class="form-control" required>
-                                           ≈Œ∞…¿Ã<label for="chinning" class="sr-only">≈Œ∞…¿Ã</label>
-                                  <input name="chin" type="password" id="chinning" class="form-control" required>
-                                 
-                                  </div>
-                                  <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">¿¸º€</button>
-                                  <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">∏Æº¬</button>
+                                <!DOCTYPE html>
+                                <html>
+                                <head>
+                                <meta charset="EUC-KR">
+                                <title>Insert title here</title>
+                                  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+                                    <meta charset="utf-8">
+                                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                                    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+                                    <meta name="description" content="">
+                                    <meta name="author" content="">
+                                    <link rel="icon" href="../../favicon.ico">
+                                
+                                    <title>target</title>
+                                
+                                    
+                                    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+                                
+                                   
+                                    <link href="signin1.css" rel="stylesheet">
+                                
                                   
-                                    <!-- <input type="button" value="πˆ∆∞" >
-                                  <input type="reset" value="∏Æº¬"> 
-                                 -->
+                                    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+                                    
+                                    <style>
+                                  
+                                  body{
+                                      background: #848484;  /* fallback for old browsers */
+                                   
+                                  }
+                                  </style>
+                                  
+                                
+                                </head>
+                                <body>
+                                
+                                    <div class="container">
+                                
+                                      <form class="target" action="target.html">
+                                        <h2 class="form-target-heading">Ïò§ÎäòÏùò Ïö¥Îèô Í∞ØÏàòÎäî?</h2>
+                                                ÌåîÍµΩÌòÄÌé¥Í∏∞<label for="push-ups" class="sr-only">ÌåîÍµΩÌòÄÌé¥Í∏∞</label>
+                                        <input name="push" type="text" id="push-ups" class="form-control" required>
+                                                ÏúóÎ™∏ÏùºÏúºÌÇ§Í∏∞<label for="sit-up" class="sr-only">ÏúóÎ™∏ÏùºÏúºÌÇ§Í∏∞</label>
+                                        <input name="push" type="text" id="push-ups" class="form-control" required>
+                                                 ÌÑ±Í±∏Ïù¥<label for="chinning" class="sr-only">ÌÑ±Í±∏Ïù¥</label>
+                                        <input name="chin" type="password" id="chinning" class="form-control" required>
+                                       
+                                        </div>
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">Ï†ÑÏÜ°</button>
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">Î¶¨ÏÖã</button>
+                                        
+                                          <!-- <input type="button" value="Î≤ÑÌäº" >
+                                        <input type="reset" value="Î¶¨ÏÖã"> 
+                                       -->
+                                      
+                                      
+                                      
+                                      </form>
+                                
+                                    </div> <!-- /container -->
                                 
                                 
-                                
-                                </form>
-                          
-                              </div> <!-- /container -->
-                          
-                          
-                              <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-                              <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-                              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-                              <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
+                                    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+                                    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                                    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+                                </body>
+                                </html>
                         </div>
                     </div>
                 </div>
@@ -254,16 +273,7 @@
         </div>
     </div>
    
-                                    <!-- /input-group -->
-                                </div>
-                                <!-- /.col-lg-6 -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+                                
     <div class="footer space-medium">
         <div class="container">
             <div class="row">
@@ -340,5 +350,4 @@
     <!-- Back to top script -->
     <script src="js/back-to-top.js" type="text/javascript"></script>
 </body>
-
 </html>
