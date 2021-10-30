@@ -54,7 +54,7 @@
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="id">ID</label>
-              <input name="id" type="text" class="form-control" id="id" placeholder="ID를 입력해 주세요." value="" required="required" >
+              <input maxlength='9' name="id" type="text" class="form-control" id="id" placeholder="ID를 입력해 주세요." value="" required="required" >
               
               <div class="invalid-feedback">
                 ID를 입력해주세요. 

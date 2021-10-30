@@ -25,7 +25,7 @@ public class Logout extends HttpServlet {
 		
 		session.removeAttribute("member");
 		
-		response.sendRedirect("Home.jsp");
+		response.sendRedirect("index2.jsp");
 		
 	
 		

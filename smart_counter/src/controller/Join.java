@@ -47,10 +47,10 @@ public class Join extends HttpServlet {
 				
 		if(cnt > 0) {
 			System.out.println("회원가입성공");
-			response.sendRedirect("Home.jsp");
+			response.sendRedirect("index2.jsp");
 		}else {
 			System.out.println("회원가입실패");
-			response.sendRedirect("Home.jsp");
+			response.sendRedirect("index2.jsp");
 		}
 		
 	} 
