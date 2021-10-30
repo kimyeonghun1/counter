@@ -1,8 +1,9 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,49 +22,43 @@
 
   
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
     
-  <style>
+    <style>
   
   body{
   	background: #40E0D0;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  
-  
+ 
   
   }
-  
-  
-  
   </style>
   
-  
-  
-  
-  </head>
 
-
- 
-
-
-  <body>
+</head>
+<body>
 
     <div class="container">
 
-      <form class="form-signin" action="Login">
-        <h2 class="form-signin-heading">í™˜ì˜í•©ë‹ˆë‹¤</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input name="id" type="text" id="inputEmail" class="form-control" placeholder="ì´ë©”ì¼" required>
-        <label for="inputPassword" class="sr-only">password</label>
-        <input name="pw" type="password" id="inputPassword" class="form-control" placeholder="íŒ¨ìŠ¤ì›Œë“œ" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> ê¸°ì–µí•˜ê¸°
-          </label>
+      <form class="target" action="target.html">
+        <h2 class="form-target-heading">¿À´ÃÀÇ ¿îµ¿ °¹¼ö´Â?</h2>
+                ÆÈ±ÁÇôÆì±â<label for="push-ups" class="sr-only">ÆÈ±ÁÇôÆì±â</label>
+        <input name="push" type="text" id="push-ups" class="form-control" required>
+                À­¸öÀÏÀ¸Å°±â<label for="sit-up" class="sr-only">À­¸öÀÏÀ¸Å°±â</label>
+        <input name="push" type="text" id="push-ups" class="form-control" required>
+                 ÅÎ°ÉÀÌ<label for="chinning" class="sr-only">ÅÎ°ÉÀÌ</label>
+        <input name="chin" type="password" id="chinning" class="form-control" required>
+       
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">ë¡œê·¸ì¸</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">Àü¼Û</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">¸®¼Â</button>
+        
+  		<!-- <input type="button" value="¹öÆ°" >
+		<input type="reset" value="¸®¼Â"> 
+       -->
+      
+      
+      
       </form>
 
     </div> <!-- /container -->
@@ -74,5 +69,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+</body>
 </html>

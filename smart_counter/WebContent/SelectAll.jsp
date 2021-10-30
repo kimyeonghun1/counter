@@ -11,11 +11,10 @@
 
 <style>
 body {
-	background: #40E0D0; /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
-	/* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
-	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #1c92d2;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
 	min-height: 100vh;
 }
 
@@ -46,7 +45,6 @@ body {
 <%
 		MemberDAO dao = new MemberDAO();
 		ArrayList<MemberVO> al = dao.selectAll();
-	//	System.out.println(al.size()); ï¿½ï¿½ ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½Â°ï¿½!
 	
 	%>
 
@@ -92,20 +90,9 @@ body {
 				<form action="Home.jsp" >
 				<button  type="submit" class="btn btn-warning btn btn-primary btn-lg" >È¨À¸·Î</button>
 				</form>
-
 			</div>
-
 		</div>
-
 	</div>
-
-
-
-
-
-
-
-
 
 </body>
 </html>

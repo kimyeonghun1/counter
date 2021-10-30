@@ -47,7 +47,7 @@ div#app .search-wrapper input::-webkit-input-placeholder {
 }
 div#app .wrapper {
   display: flex;
-  max-width: 444px;
+  max-width: 750px;
   flex-wrap: wrap;
   padding-top: 12px;
 }
@@ -63,7 +63,7 @@ div#app .card:hover {
 div#app .card a {
   text-decoration: none;
   padding: 12px;
-  color: gray;
+  color: white;
   font-size: 15px;
   display: flex;
   flex-direction: column;
