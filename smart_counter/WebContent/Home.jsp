@@ -259,7 +259,7 @@
 						<div
 							class="u-container-layout u-similar-container u-container-layout-4">
 							<!-- <p align="center">달력</p> -->
-							<a href="#">출석체크</a>
+							<a href="calendar.html">출석체크</a>
 							<span class="u-icon u-icon-circle u-icon-4"><svg
 									class="u-svg-link" preserveAspectRatio="xMidYMin slice"
 									viewBox="0 0 55.867 55.867" style="">
