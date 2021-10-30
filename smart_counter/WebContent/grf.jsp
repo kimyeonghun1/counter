@@ -60,7 +60,7 @@ const labels = [
     %>
 	
 	
-];
+
 
 const data = {
     labels: labels,
