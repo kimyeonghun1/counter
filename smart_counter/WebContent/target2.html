@@ -5,24 +5,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="targetUpdate">
-	<!-- 2. input태그에 속성: 입력받은 값에 이름표부착 -->
+	<form action="ex02">
+	<!-- 2. input태그에 name속성: 입력받은 값에 이름표부착 -->
 		팔굽혀펴기 <input type="text" name="push"><br>
 		윗몸일으키기 <input type="text" name="sit"><br>
 		풀업 <input type="text" name="pull"><br>
 	<!-- 3. input태그에 submit 속성값: 서버로 값을 보내기위한 버튼 -->
-		<input type="submit" value="전송" onclick="Test()">		
-		<input type="reset" value="리셋">
-	</form>
+		<input type="submit" value="전송">
 		
 		<script>
 		
 			function Test() {
-				alert("오늘의 목표가 설정되었습니다."); //경고창	
+				alert("함수호출!"); //경고창	
 				
 			}//자바->메소드, 자바스크립트->함수
 			
 		</script>
+		
+		
+		<input type="button" value="버튼" onclick="Test()">
+		<input type="reset" value="리셋">
+		
+		
+		
+	</form>
 
 </body>
 </html>

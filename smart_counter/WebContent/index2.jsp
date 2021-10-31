@@ -195,7 +195,6 @@
                     <div class="outline pinside80 team-block">
                         <div class="row">
                             <div class="container">
-
                                 <!DOCTYPE html>
                                 <html>
                                 <head>
@@ -235,18 +234,18 @@
                                 
                                     <div class="container">
                                 
-                                      <form class="target" action="target.html">
+                                      <form class="target" action="targetUpdate">
                                         <h2 class="form-target-heading">오늘의 운동 갯수는?</h2>
                                                 팔굽혀펴기<label for="push-ups" class="sr-only">팔굽혀펴기</label>
                                         <input name="push" type="text" id="push-ups" class="form-control" required>
                                                 윗몸일으키기<label for="sit-up" class="sr-only">윗몸일으키기</label>
-                                        <input name="push" type="text" id="push-ups" class="form-control" required>
+                                        <input name="sit" type="text" id="push-ups" class="form-control" required>
                                                  턱걸이<label for="chinning" class="sr-only">턱걸이</label>
-                                        <input name="chin" type="password" id="chinning" class="form-control" required>
+                                        <input name="pull" type="password" id="chinning" class="form-control" required>
                                        
                                         </div>
                                         <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">전송</button>
-                                        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">리셋</button>
+                                        <button class="btn btn-lg btn-primary btn-block" type="reset">리셋</button>
                                         
                                           <!-- <input type="button" value="버튼" >
                                         <input type="reset" value="리셋"> 
@@ -255,8 +254,16 @@
                                       
                                       
                                       </form>
+                                      </div>
+                                      	<script>
+		
+			function Test() {
+				alert("오늘의 목표가 설정되었습니다."); //경고창	
+				
+			}//자바->메소드, 자바스크립트->함수
+			
+		</script>
                                 
-                                    </div> <!-- /container -->
                                 
                                 
                                     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
