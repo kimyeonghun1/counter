@@ -44,7 +44,7 @@
 </head>
 <body>
 
-	<form action="Join" method="post">
+	<form action="#" method="post">
   <div class="container">
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
@@ -61,6 +61,7 @@
               </div>
              <input type="button" value="중복체크" onclick="idCheck()" required="required">
              <span id="sp_result"></span>
+             <input type="hidden" id='chk' name = "chk" value="0">
             </div>
             
             
@@ -71,7 +72,7 @@
  
             <div class="col-md-6 mb-3">
               <label for="pw">PW</label>
-              <input name="pw" type="password" class="form-control" id="pw" placeholder="PW를 입력해 주세요." value="" required>
+              <input maxlength="9" name="pw" type="password" class="form-control" id="pw" placeholder="PW를 입력해 주세요." value="" required>
               <div class="invalid-feedback">
                 PW를 입력해주세요.
               </div>
@@ -80,7 +81,7 @@
         
             <div class="col-md-6 mb-3">
                 <label for="email">키</label>
-                <input name="height" type="text" class="form-control" id="email" placeholder="홍길동" required="required">
+                <input maxlength="3" name="height" type="text" class="form-control" id="email" placeholder="홍길동" required="required">
                 <div class="invalid-feedback">
                  키를 입력해주세요.
                 </div>
@@ -88,7 +89,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="id">몸무게</label>
-                <input  name="kg" type="text" class="form-control" id="id" placeholder="몸무게를 입력해주세요." value="" required="required">
+                <input maxlength="3" name="kg" type="text" class="form-control" id="id" placeholder="몸무게를 입력해주세요." value="" required="required">
                 <div class="invalid-feedback">
                 몸무게를 입력해주세요.
                 </div>
@@ -96,7 +97,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="id">나이</label>
-                <input  name="age" type="text" class="form-control" id="id" placeholder="나이를 입력해주세요." value="" required="required">
+                <input maxlength="3"  name="age" type="text" class="form-control" id="id" placeholder="나이를 입력해주세요." value="" required="required">
                 <div class="invalid-feedback">
                 나이를 입력해주세요.
                 </div>
@@ -104,7 +105,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="id">BMI</label>
-                <input name="bmi" type="text" class="form-control" id="id" placeholder="BMI를 입력해주세요." value="" required="required">
+                <input maxlength="9" name="bmi" type="text" class="form-control" id="id" placeholder="BMI를 입력해주세요." value="" required="required">
                 <div class="invalid-feedback">
                 BMI를 입력해주세요.
                 </div>
@@ -112,7 +113,7 @@
               
               <div class="col-md-6 mb-3">
                 <label for="id">닉네임</label>
-                <input name="nick" type="text" class="form-control" id="id" placeholder="닉네임을 입력해주세요." value="" required="required">
+                <input maxlength="9" name="nick" type="text" class="form-control" id="id" placeholder="닉네임을 입력해주세요." value="" required="required">
                 <div class="invalid-feedback">
                 닉네임을 입력해주세요.
                 </div>
@@ -136,7 +137,7 @@
             <label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
           </div>
           <div class="mb-4"></div>
-          <button class="btn btn-primary btn-lg btn-block" type="submit">가입 완료</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" onclick="fn_submit()">가입 완료</button>
         </form>
       </div>
     </div>
@@ -167,6 +168,9 @@
   
   
   <script>
+  				
+  
+		
   
 			
 				function idCheck() {
@@ -186,10 +190,13 @@
 							
 							sp_result.innerText = "사용불가능한 아이디";
 							input.value="";
+							$('#chk').attr('value', '0');
 							
 						}else{
 							
 							$("#sp_result").text("사용가능한 아이디");
+							$('#chk').attr('value', '1');
+							$('form').attr('action', 'Join');
 			
 						}
 						
@@ -203,6 +210,23 @@
 	
 				}
 			
+				
+				
+				
+			      function fn_submit() {
+						if($('#chk').val() =='0'){ // value값 가져올때는 .val()
+							alert("ID 중복체크를 해주세요!!");
+							return false;
+							// 이 false값을 받아서 if 문 이용해서 action도 조정해주고 alert로 해줄수도 있겠네요 
+							//그 조금 더 공부 해보고 질문드려도 될까요! ㅇ ㅣ해할 시간이 필요합니다 ㅠㅠ 네 이따 카톡으로 말씀해 주세요 월요일에도 괜찮구요
+							//넵 감사합니다!!
+						}
+						else{
+							alert("회원가입 성공");
+						}
+		            }
+				
+				
 			
 			</script>
 			

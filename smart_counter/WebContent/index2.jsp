@@ -107,7 +107,7 @@
                                         <li><a href="calendar.html" title="Testimonial" class="animsition-link">출석도장</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="style-guide.html" title="Contact Us" class="animsition-link">로그인</a>
+                                <li><a href="signin.html" title="Contact Us" class="animsition-link">로그인</a>
                                     <ul>
                                     <%
                                     	if (vo == null) {
