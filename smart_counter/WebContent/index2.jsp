@@ -283,7 +283,7 @@
     </div>
    
                                 
-    <div class="footer space-medium" style = "width : 1300px; padding-top: 20px; padding-bottom: 20px;">
+    <div class="footer space-medium" style = "width : 1150px; padding-top: 20px; padding-bottom: 20px;">
         <div class="container" >
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
