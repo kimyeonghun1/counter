@@ -102,9 +102,9 @@
                                         <li><a href="Graph2.html" title="Testimonial" class="animsition-link">일별그래프</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="calendar.html" title="Contact Us" class="animsition-link">출석</a>
+                                <li><a href="cal.html" title="Contact Us" class="animsition-link">출석</a>
                                     <ul>
-                                        <li><a href="calendar.html" title="Testimonial" class="animsition-link">출석도장</a></li>
+                                        <li><a href="cal.html" title="Testimonial" class="animsition-link">출석도장</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="signin.html" title="Contact Us" class="animsition-link">로그인</a>
