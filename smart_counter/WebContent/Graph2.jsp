@@ -1,3 +1,7 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTDHTML4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -47,21 +51,93 @@
                       </div>
                     </div>
                     -->
+                    
+                    <!-- JDBC(SELECT) -->
+                    <%
+		//JDBC(Select)
+		
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		String push_tgt = "";
+		String sit_tgt = "";
+		String pull_tgt = "";
+		
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String dbid = "campus_a_5_1025";
+			String dbpw = "smhrd5";
+			
+			conn = DriverManager.getConnection(url, dbid, dbpw);
+			
+			//1
+			String sql = "SELECT T_COUNT FROM event WHERE S_ID = 'a0'";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				push_tgt = rs.getString(1);
+			}
+
+			//2
+			sql = "SELECT T_COUNT FROM event WHERE S_ID = 'b0'";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				sit_tgt = rs.getString(1);
+			}
+			
+			//3
+			sql = "SELECT T_COUNT FROM event WHERE S_ID = 'c0'";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				pull_tgt = rs.getString(1);
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			
+			try {
+				if(rs!=null) {
+					rs.close();
+				}
+				if(psmt!=null) {
+					psmt.close();
+				}
+				if(conn!=null) {
+					conn.close();
+				}
+				
+			}catch(Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+	   %>	
                     <script>
+                    
+                    
                         // === include 'setup' then 'config' above ===
+                        var push_tgt ="<%=push_tgt%>"; 
+                        var sit_tgt ="<%=sit_tgt%>"; 
+                        var pull_tgt ="<%=pull_tgt%>"; 
                         var data1 = {
                             label: '¸ñÇ¥°¹¼ö',
                             backgroundColor: 'rgb(0, 0, 0)',
                             borderColor: 'rgb(0, 0, 0)',
                             type: 'line',
                             data: [
-                                20,
-                                20,
-                                20,
-                                20,
-                                20,
-                                20,
-                                20
+                            	push_tgt,
+                            	push_tgt,
+                            	push_tgt,
+                            	push_tgt,
+                            	push_tgt,
+                            	push_tgt,
+                            	push_tgt
                             ]
                         };
                         var data2 = {
@@ -111,13 +187,13 @@
                             borderColor: 'rgb(0, 0, 0)',
                             type: 'line',
                             data: [
-                                30,
-                                30,
-                                30,
-                                30,
-                                30,
-                                30,
-                                30
+                            	sit_tgt,
+                            	sit_tgt,
+                            	sit_tgt,
+                            	sit_tgt,
+                            	sit_tgt,
+                            	sit_tgt,
+                            	sit_tgt
                             ]
                         };
                         var data4 = {
@@ -159,13 +235,13 @@
                             borderColor: 'rgb(0, 0, 0)',
                             type: 'line',
                             data: [
-                                10,
-                                10,
-                                10,
-                                10,
-                                10,
-                                10,
-                                10
+                            	pull_tgt,
+                            	pull_tgt,
+                            	pull_tgt,
+                            	pull_tgt,
+                            	pull_tgt,
+                            	pull_tgt,
+                            	pull_tgt
                             ]
                         };
                         var data6 = {
