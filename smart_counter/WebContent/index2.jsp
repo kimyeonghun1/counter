@@ -97,9 +97,9 @@
                                         <li><a href="blog-default.html" title="Blog" class="animsition-link">참고영상</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="Graph2.html" title="Features" class="animsition-link">그래프</a>
+                                <li><a href="Graph2.jsp" title="Features" class="animsition-link">그래프</a>
                                     <ul>
-                                        <li><a href="Graph2.html" title="Testimonial" class="animsition-link">일별그래프</a></li>
+                                        <li><a href="Graph2.jsp" title="Testimonial" class="animsition-link">일별그래프</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="cal.html" title="Contact Us" class="animsition-link">출석</a>
