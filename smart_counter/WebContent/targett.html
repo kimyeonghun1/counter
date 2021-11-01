@@ -38,7 +38,8 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container" style="max-width: 300px;">
+      
 
       <form class="target" action="target.html">
         <h2 class="form-target-heading">오늘의 운동 갯수는?</h2>
@@ -48,10 +49,13 @@
         <input name="push" type="text" id="push-ups" class="form-control" required>
                  턱걸이<label for="chinning" class="sr-only">턱걸이</label>
         <input name="chin" type="password" id="chinning" class="form-control" required>
+        <br>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()" >전송</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()" >리셋</button>
        
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">전송</button>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">리셋</button>
+        
         
   		<!-- <input type="button" value="버튼" >
 		<input type="reset" value="리셋"> 
