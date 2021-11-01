@@ -13,7 +13,7 @@
   <style>
     body {
     	
-      background: gray;  /* fallback for old browsers */
+      background: #848484;  /* fallback for old browsers */
     
 
 	
