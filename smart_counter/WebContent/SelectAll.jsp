@@ -11,8 +11,7 @@
 
 <style>
 body {
-	background: #1c92d2;  /* fallback for old browsers */
-	
+	background: #1c92d2; /* fallback for old browsers */
 	min-height: 100vh;
 }
 
@@ -29,10 +28,10 @@ body {
 	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
 }
 
- #a {
+#a {
 	margin-bottom: 5.5rem;
 	margin-top: 100px;
-} 
+}
 </style>
 
 
@@ -41,10 +40,9 @@ body {
 </head>
 
 <%
-		MemberDAO dao = new MemberDAO();
-		ArrayList<MemberVO> al = dao.selectAll();
-	
-	%>
+	MemberDAO dao = new MemberDAO();
+ArrayList<MemberVO> al = dao.selectAll();
+%>
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -56,7 +54,7 @@ body {
 
 
 	<div class="container">
-
+		<div class="input-form">
 		<div class="row justify-content-center">
 			<div class="col-10">
 
@@ -73,15 +71,15 @@ body {
 						</tr>
 					</thead>
 					<tbody>
-						<% for (int i=0; i<al.size(); i++){ %>
+						<%for (int i = 0; i < al.size(); i++) {%>
 
 						<tr>
-							<th scope="row"><%=i+1 %></th>
+							<th scope="row"><%=i + 1%></th>
 							<td><%=al.get(i).getId()%></td>
 							<td><%=al.get(i).getPw()%></td>
 							<td><a align = "center" href="DeleteService?email=<%=al.get(i).getId()%>">ªË¡¶</a></td>
 						</tr>
-						<% }%>
+						<%}%>
 						</table>
 						
 						
@@ -90,6 +88,7 @@ body {
 				</form>
 			</div>
 		</div>
+	</div>
 	</div>
 
 </body>

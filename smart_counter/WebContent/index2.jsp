@@ -39,7 +39,7 @@
 <body class="animsition">
 	 <div class="top-bar">
         <!-- top-bar -->
-        <div class="container">
+        <div class="container" style = "width : 1300px;">
             <div class="row">
                 <div class="col-md-3 hidden-sm hidden-xs bdr">
                     <div class="time-info">
@@ -75,6 +75,7 @@
     <div class="hero-section">
         <div class="header">
             <!-- navigation -->
+            
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-6">
@@ -137,13 +138,14 @@
                                     </ul>
                                 </li>
                             </ul>
+                        
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
+         <div class="container">
+            <div class="row" style = "width : 2300px;">
                 <div class="col-lg-6 col-md-6 col-sm-12  col-xs-12">
                     <div class="hero-caption pinside50">
                         <img src = man.png >
@@ -281,15 +283,15 @@
     </div>
    
                                 
-    <div class="footer space-medium">
-        <div class="container">
+    <div class="footer space-medium" style = "width : 1300px; padding-top: 20px; padding-bottom: 20px;">
+        <div class="container" >
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
                     <div class="footer-logo mb30">
-                        <img src="images/logo.png" class="" alt="Fitness Website Template">
+                        <img src="logo_2.png" class="" alt="Fitness Website Template">
                     </div>
                 </div>
-                <div class="col-lg-offset-1 col-lg-3 col-md-offset-1 col-md-3 col-sm-3 col-xs-12">
+                <div class="col-lg-offset-1 cols-lg-3 col-md-offset-1 col-md-3 col-sm-3 col-xs-12">
                     <div class="footer-widget mb30">
                         <h3 class="footer-title">Contact Info</h3>
                         <ul class="listnone">
@@ -329,6 +331,7 @@
             </div>
         </div>
     </div>
+    <br>
     <div class="tiny-footer">
         <div class="container">
             <div class="row">
