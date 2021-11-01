@@ -113,7 +113,7 @@
                                     	if (vo == null) {
                                     %>
                                         <li><a href="Join.jsp" title="Testimonial" class="animsition-link">회원가입</a></li>
-                                        <li><a href="Login.html" title="Testimonial" class="animsition-link">로그인</a></li>
+                                        <li><a href="signin.html" title="Testimonial" class="animsition-link">로그인</a></li>
                                     <%
                                     	} else {
                                     %>
