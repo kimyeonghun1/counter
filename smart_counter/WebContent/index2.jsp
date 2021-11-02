@@ -246,25 +246,21 @@
                                         <input name="pull" type="password" id="chinning" class="form-control" required>
                                        
                                         </div>
-                                        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()">전송</button>
-                                        <button class="btn btn-lg btn-primary btn-block" type="reset">리셋</button>
+                                        <!-- bootstrap 사용법   style속성 추가해서 사용-->
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()" style="background-color:#cdff07; border-color: #c5f016; color: #0e0e0e;">전송</button>
+                                        <button class="btn btn-lg btn-primary btn-block" type="reset" style="background-color:#cdff07; border-color: #c5f016; color: #0e0e0e;">리셋</button>
                                         
-                                          <!-- <input type="button" value="버튼" >
-                                        <input type="reset" value="리셋"> 
-                                       -->
-                                      
-                                      
-                                      
                                       </form>
                                       </div>
                                       	<script>
 		
-			function Test() {
-				alert("오늘의 목표가 설정되었습니다."); //경고창	
+											function Test() {
+												alert("오늘의 목표가 설정되었습니다."); /* 경고창 */	
 				
-			}//자바->메소드, 자바스크립트->함수
+											}
 			
-		</script>
+			
+										</script>
                                 
                                 
                                 
