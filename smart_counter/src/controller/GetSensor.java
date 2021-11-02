@@ -19,17 +19,17 @@ public class GetSensor extends HttpServlet {
 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.setCharacterEncoding("euc-kr");
-		
-		
-		int a= Integer.parseInt(request.getParameter("count"));
-		String b = request.getParameter("code");
+		int count = Integer.parseInt(request.getParameter("count"));
+		String s_id = request.getParameter("code");
+		System.out.println("count : "+count);
+		System.out.println("s_id : "+s_id);
 		SensorDAO dao = new SensorDAO();
-		SensorVO vo = dao.update2(a,b);
+		
+		SensorVO vo = dao.update2(count, s_id);
 		String result = new Gson().toJson(vo);		
 		PrintWriter out = response.getWriter();
-		out.print(result);
+	/*	out.print(result);
+		*/
 	
 		
 		

@@ -64,16 +64,16 @@ public class SensorDAO {
 		return vo;
 	}
 	
-	public SensorVO update2(int a, String b) {
+	public SensorVO update2(int count, String s_id) {
 		SensorVO vo = null;
 		conn();
 		System.out.println("디비 접속 성공");
-		String sql1 = "update history set r_count =?, s_id =? where id='A'";
+		String sql1 = "update history set r_count =? where id='A' and s_id =?";
 		int result = 0;
 		try {
 			psmt = conn.prepareStatement(sql1);
-			psmt.setInt(1, a);
-			psmt.setString(2, b);
+			psmt.setInt(1, count);
+			psmt.setString(2, s_id);
 			System.out.println("psmt 준비완료");
 			result = psmt.executeUpdate();
 			System.out.println("update 실행");
@@ -84,7 +84,7 @@ public class SensorDAO {
 			close();
 		}
 		System.out.println(result+"개 변형");
-		vo = getSensor();
+		
 		return vo;
 	}
 	
