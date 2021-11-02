@@ -7,10 +7,8 @@ version: 2.2.2
 /* for all templates and grids */
 #id_html{text-align:center;
 
-background: #bdc3c7;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-		
+background: gray;  /* fallback for old browsers */
+
  min-height: 100%;
  min-width: 1024px;
  min-height: 100vh;
@@ -140,26 +138,28 @@ background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, F
 /* Basic Element Formatting */
 
 #header{
+	background: #283048;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 	height:200px;
-	
-	  background: #40E0D0;  /* fallback for old browsers */
-	  background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
-	  background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	
-	
-	margin-top: 100px;
-	padding:0;
+	margin-top: 0px;
+	padding:0; 
 	}
 	
 #header h1{
+	background: #283048;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* fallback for old browsers */
 	font-size:3em;
 	margin:0;
-	padding:10px;
+	padding:0px;
 	}
 	
 #header h1 a{
-	color:#000000;
-	background-color:#F3F2ED;
+	background:	gray; 
+	
 	}
 
 .content{
