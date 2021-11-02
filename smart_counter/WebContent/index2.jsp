@@ -355,5 +355,45 @@
     <script type="text/javascript" src="js/testimonial-carousel.js"></script>
     <!-- Back to top script -->
     <script src="js/back-to-top.js" type="text/javascript"></script>
+    
+    
+    
+       	<script type="text/javascript">
+	
+	
+	$(function(){ 
+		$.ajax({
+			url : "GetSensor",
+			type : "get",
+			dataType : "json",
+			success : function(data){
+				$('#result').html("현재 갯수 : " + data.mysensor);
+			},
+			error : function(){
+				alert('1');
+			}
+		});
+	});
+	
+		$("#push-ups").on('click',function(){
+			var mysensor = $('#mysensor').val();
+			$.ajax({
+				url : "InputSensor",
+				type : "get",
+				data : {"mysensor": mysensor},
+				dataType : "json",
+				success : function(data){
+					$('#result').html("목표갯수 : " + data.mysensor);
+				},
+				error : function(){
+					alert('2');
+				}
+			});
+		});
+	</script>
+    
+    
+    
+    
 </body>
 </html>
