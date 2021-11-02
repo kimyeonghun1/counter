@@ -383,7 +383,7 @@
 				$('#result').html("현재 갯수 : " + data.mysensor);
 			},
 			error : function(){
-				alert('1');
+				
 			}
 		});
 	});
