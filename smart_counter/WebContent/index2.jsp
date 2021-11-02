@@ -31,12 +31,19 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+    	html {scroll-behavior: smooth; /* 부드러게 */}
+    </style>
+    
 </head>
 			<%
 				MemberVO vo = (MemberVO)session.getAttribute("member");
 			%>
 
 <body class="animsition">
+	<script>
+		$("#id").removeAttr("href");
+	</script>
 	 <div class="top-bar">
         <!-- top-bar -->
         <div class="container" style = "width : 1300px;">
@@ -98,9 +105,9 @@
                                         <li><a href="#link" title="Blog" class="animsition-link">참고영상</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="Graph2.jsp" title="Features" class="animsition-link">그래프</a>
+                                <li><a href="#" title="Features" class="animsition-link">그래프</a>
                                     <ul>
-                                        <li><a href="Graph2.jsp" title="Testimonial" class="animsition-link">일별그래프</a></li>
+                                        <li><a href="haeuntest.jsp" title="Testimonial" class="animsition-link">일별그래프</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="cal.html" title="Contact Us" class="animsition-link">출석</a>
@@ -194,7 +201,7 @@
     </div>
     						<!-- 운동갯수 앵커태그  -->
                         	<a id="target"></a>
-                        	<br><br><br><br><br>
+                        	<br><br><br><br><br><br>
 
     <div class="space-medium">
         <div class="container">
