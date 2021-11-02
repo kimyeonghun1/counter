@@ -88,14 +88,14 @@
                         <div class="navigation pull-right" id="navigation">
                             <ul>
                                 <li class="active"><a href="index2.jsp" title="Home" class="animsition-link">Home</a></li>
-                                <li><a href="targett.html" title="Classes" class="animsition-link">목표</a>
+                                <li><a href="#target" title="Classes" class="animsition-link">목표</a>
                                     <ul>
-                                        <li><a href="targett.html" title="Classes List">목표개수 설정</a></li>
+                                        <li><a href="#target" title="Classes List">목표개수 설정</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="blog-default.html" title="Blog" class="animsition-link">자세</a>
+                                <li><a href="#link" title="Blog" class="animsition-link">자세</a>
                                     <ul>
-                                        <li><a href="blog-default.html" title="Blog" class="animsition-link">참고영상</a></li>
+                                        <li><a href="#link" title="Blog" class="animsition-link">참고영상</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="Graph2.jsp" title="Features" class="animsition-link">그래프</a>
@@ -154,6 +154,9 @@
             </div>
         </div>
     </div>
+    						<!-- 자세링크 앵커태그  -->
+                        	<a id="link"></a>
+                        	<br><br><br><br>
     <div class="space-medium">
         <div class="container">
             <div class="row">  
@@ -189,6 +192,9 @@
             </div>
         </div>
     </div>
+    						<!-- 운동갯수 앵커태그  -->
+                        	<a id="target"></a>
+                        	<br><br><br><br><br>
 
     <div class="space-medium">
         <div class="container">
