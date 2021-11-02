@@ -33,11 +33,10 @@ body {
 	margin-top: 100px;
 	
 }
-#home{
-        width:100px;
-        margin:auto;
-        display:block;
-    }
+#btn btn-warning btn btn-primary btn-lg{
+
+}
+
 </style>
 
 
