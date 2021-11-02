@@ -9,9 +9,9 @@ version: 2.2.2
 
 background: gray;  /* fallback for old browsers */
 
- min-height: 100%;
- min-width: 1024px;
- min-height: 100vh;
+ min-height: 0%;
+ min-width: 0px;
+ min-height: 0vh;
 }
 #ft{clear:both;}
 /**/
@@ -24,7 +24,7 @@ background: gray;  /* fallback for old browsers */
 	width:73.074em;*width:71.313em;min-width:950px;}
 /* 100% with 10px viewport side matting */ 
 #doc3 {
-	margin:auto 10px; /* not for structure, but so content doesn't bleed to edge */
+	margin:auto 0px; /* not for structure, but so content doesn't bleed to edge */
 	width:auto;}
 	
 /* below required for all fluid grids; adjust widths and margins above accordingly */
