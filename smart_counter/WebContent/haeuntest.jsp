@@ -19,6 +19,7 @@
     overflow: hidden;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
+
   }
   /* 캘린더 위의 해더 스타일(날짜가 있는 부분) */ 
   .fc-header-toolbar {
@@ -26,6 +27,8 @@
     padding-left: 1em;
     padding-right: 1em;
   }
+  
+  
 </style>
 </head>
 <body style="padding:30px;">
@@ -95,5 +98,8 @@
     });
   })();
 </script>
+<br><br>
+<button type="button" onclick="location.href='index2.jsp'" id = "home" style="background-color: #fffadf;" >홈으로</button>
+
 </body>
 </html>
