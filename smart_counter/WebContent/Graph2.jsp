@@ -17,7 +17,8 @@
         <div id="doc3" class="yui-t7">
             <div id="hd">
                 <div id="header">
-                    <h1>스마트 운동 카운터</h1><br><p>스마트 운동 카운터를 이용한 카운팅 결과를 그래프로 볼 수 있습니다.</p>
+                <br>
+                    <h1 align = "center">스마트 운동 카운터</h1><br><p align = "center">스마트 운동 카운터를 이용한 카운팅 결과를 그래프로 볼 수 있습니다.</p>
                 </div>
             </div>
             <div id="bd">
@@ -278,4 +279,5 @@
                         const myChart3 = new Chart(document.getElementById('myChart3'), config3);
                     </script>
                 </body>
+                    <button type="button"  onclick="location.href='index2.jsp'" id = "home" style="background-color: #fffadf;" >홈으로</button>
             </html>

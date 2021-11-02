@@ -28,7 +28,11 @@
     padding-right: 1em;
   }
   
-  
+  #home{
+        width:100px;
+        margin:auto;
+        display:block;
+    }
 </style>
 </head>
 <body style="padding:30px;">

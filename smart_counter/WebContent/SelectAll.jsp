@@ -31,7 +31,13 @@ body {
 #a {
 	margin-bottom: 5.5rem;
 	margin-top: 100px;
+	
 }
+#home{
+        width:100px;
+        margin:auto;
+        display:block;
+    }
 </style>
 
 
