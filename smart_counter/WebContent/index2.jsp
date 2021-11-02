@@ -87,7 +87,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-6">
                         <div class="logo">
-                            <a href="index.html"><img src="logo_120.png" alt=""></a>
+                            <a href="index2.jsp"><img src="logo_120.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-12">
@@ -95,24 +95,24 @@
                         <div class="navigation pull-right" id="navigation">
                             <ul>
                                 <li class="active"><a href="index2.jsp" title="Home" class="animsition-link">Home</a></li>
-                                <li><a href="#target" title="Classes" class="animsition-link">목표</a>
+                                <li><a href="#" title="Classes" class="animsition-link">목표</a>
                                     <ul>
                                         <li><a href="#target" title="Classes List">목표개수 설정</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#link" title="Blog" class="animsition-link">자세</a>
+                                <li><a href="#" title="Blog" class="animsition-link">자세</a>
                                     <ul>
                                         <li><a href="#link" title="Blog" class="animsition-link">참고영상</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#" title="Features" class="animsition-link">그래프</a>
                                     <ul>
-                                        <li><a href="haeuntest.jsp" title="Testimonial" class="animsition-link">일별그래프</a></li>
+                                        <li><a href="Graph2.jsp" title="Testimonial" class="animsition-link">일별그래프</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="cal.html" title="Contact Us" class="animsition-link">출석</a>
+                                <li><a href="#" title="Contact Us" class="animsition-link">출석</a>
                                     <ul>
-                                        <li><a href="cal.html" title="Testimonial" class="animsition-link">출석도장</a></li>
+                                        <li><a href="haeuntest.jsp" title="Testimonial" class="animsition-link">출석도장</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="signin.html" title="Contact Us" class="animsition-link">로그인</a>
@@ -345,7 +345,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                   Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+                   Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">JavaChipFrappuccino</a>
                 </div>
             </div>
         </div>
