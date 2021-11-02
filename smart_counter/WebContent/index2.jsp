@@ -283,7 +283,7 @@
     </div>
    
                                 
-    <div class="footer space-medium" style = "width : 1150px; padding-top: 20px; padding-bottom: 20px;">
+    <div class="footer space-medium" style = "width : 1150px; padding-top: 20px; padding-bottom: 20px; font-color = "white">
         <div class="container" >
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
@@ -296,13 +296,14 @@
                         <h3 class="footer-title">Contact Info</h3>
                         <ul class="listnone">
                             <li>
-                                <address>
-                                    2687 Broadcast Drive Monroe,
-                                    <br> NC 28112
+                                <address style = "color : gray;">
+								(사)스마트인재개발원
+								광주광역시 남구 송암로60
+                                    <br> 광주CGI센터 2층
                                 </address>
                             </li>
-                            <li>+1 (800)-123-456 </li>
-                            <li>fitnessgym@gmail.com</li>
+                            <li style = "color : gray;">+82 062)655-3509</li>
+                            <li style = "color : gray;">bwk1525@gmail.com</li>
                         </ul>
                     </div>
                 </div>
@@ -310,12 +311,11 @@
                     <div class="footer-widget mb30">
                         <h3 class="footer-title">Quick Links</h3>
                         <ul class="listnone">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="classes.html">Classes</a></li>
-                            <li><a href="blog-default.html">News</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                            <li><a href="testimonial.html">Testimonial</a></li>
-                            <li><a href="contact.html">Contactus</a></li>
+                            <li><a href="index2.jsp">Home</a></li>
+                            <li><a href="targett.html">목표</a></li>
+                            <li><a href="link.html">자세</a></li>
+                            <li><a href="Graph2.html">그래프</a></li>
+                            <li><a href="cal.html">출석</a></li>
                         </ul>
                     </div>
                 </div>
