@@ -399,7 +399,7 @@
 					$('#result').html("목표갯수 : " + data.mysensor);
 				},
 				error : function(){
-					alert('2');
+					
 				}
 			});
 		});

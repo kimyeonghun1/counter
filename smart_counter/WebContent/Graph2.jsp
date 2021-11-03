@@ -1,3 +1,6 @@
+<%@page import="model.GraphVo"%>
+<%@page import="model.MemberDAO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -119,6 +122,16 @@
 			}
 		}
 	   %>	
+	   
+	   
+	   <% 
+	   GraphVo gvo;
+	   
+	   MemberDAO dao = new MemberDAO();
+	   ArrayList<GraphVo> al = dao.R_COUNT("A");
+	   
+	   %>
+	   
                     <script>
                     
                     
@@ -132,13 +145,26 @@
                             borderColor: 'rgb(0, 0, 0)',
                             type: 'line',
                             data: [
-                            	push_tgt,
-                            	push_tgt,
-                            	push_tgt,
-                            	push_tgt,
-                            	push_tgt,
-                            	push_tgt,
-                            	push_tgt
+                            	
+
+                            	<%
+                            	for(int i=0; i<al.size(); i++){ %>
+                            		
+                            		<%=push_tgt%>
+                            		
+                            		<%
+                            		
+                            	
+                            	}
+                            	
+                            	
+                            	%>
+                            	
+                            	
+                            	
+                            	
+                      
+                            	
                             ]
                         };
                         var data2 = {
@@ -146,22 +172,44 @@
                             backgroundColor: 'rgb(255, 0, 0)',
                             borderColor: 'rgb(255, 0, 0)',
                             data: [
-                                10,
-                                25,
-                                15,
-                                30,
-                                5,
-                                30,
-                                45
+                            	
+                            	<%
+                            	for(int i=0; i<al.size(); i++){ %>
+                            		
+                            		<%=al.get(i).getR_COUNT()%>
+                            		
+                            		<%
+                            		
+                            	
+                            	}
+                            	
+                            	
+                            	%>
+                               
+                            	
+                            	
+                            	
                             ]
                         };
                         const labels = [
-                            '10岿1老',
-                            '10岿2老',
-                            '10岿3老',
-                            '10岿4老',
-                            '10岿5老',
-                            '10岿6老'
+                            
+                        	
+                           	<%
+                        	for(int i=0; i<al.size(); i++){ %>
+                        		
+                        		<%=al.get(i).getDate()%>
+                        		
+                        		<%
+                        
+                        	
+                        	}
+                        	
+                        	
+                        	%>
+                           
+                        	
+                        	
+                        	
                         ];
                         const Adata = {
                             labels: labels,
