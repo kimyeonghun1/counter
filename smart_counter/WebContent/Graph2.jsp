@@ -146,25 +146,18 @@
                             type: 'line',
                             data: [
                             	
-
                             	<%
                             	for(int i=0; i<al.size(); i++){ %>
                             		
-                            		<%=push_tgt%>
+                            		<%=push_tgt%>,
                             		
                             		<%
                             		
-                            	
                             	}
                             	
                             	
                             	%>
-                            	
-                            	
-                            	
-                            	
-                      
-                            	
+           
                             ]
                         };
                         var data2 = {
@@ -176,41 +169,23 @@
                             	<%
                             	for(int i=0; i<al.size(); i++){ %>
                             		
-                            		<%=al.get(i).getR_COUNT()%>
-                            		
+                            		<%=al.get(i).getR_COUNT()%>,
                             		<%
-                            		
-                            	
+                         
                             	}
-                            	
-                            	
+                          
                             	%>
-                               
-                            	
-                            	
-                            	
+                  
                             ]
                         };
-                        const labels = [
-                            
-                        	
-                           	<%
-                        	for(int i=0; i<al.size(); i++){ %>
-                        		
-                        		<%=al.get(i).getDate()%>
-                        		
-                        		<%
+                        const labels = [];
                         
-                        	
-                        	}
-                        	
-                        	
-                        	%>
-                           
-                        	
-                        	
-                        	
-                        ];
+                        <%for(int i=0; i<al.size(); i++){%>
+                        
+                    	labels.push("<%=al.get(i).getDate()%>")
+                    		
+                    		
+                    	<%}%>
                         const Adata = {
                             labels: labels,
                             datasets: [data1, data2]
