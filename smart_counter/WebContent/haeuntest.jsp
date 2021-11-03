@@ -103,7 +103,9 @@
   })();
 </script>
 <br><br>
-<button type="button" onclick="location.href='index2.jsp'" id = "home" style="background-color: #fffadf;" >È¨À¸·Î</button>
+	<div class="logo" align="center">
+		<a href="index2.jsp"><img src="logo_120.png" alt=""></a>
+	</div>
 
 </body>
 </html>

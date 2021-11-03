@@ -18,7 +18,7 @@
             <div id="hd">
                 <div id="header">
                 <br>
-                    <h1 align = "center">스마트 운동 카운터</h1><br><p align = "center">스마트 운동 카운터를 이용한 카운팅 결과를 그래프로 볼 수 있습니다.</p>
+                    <h1 align = "center"style="color:white">스마트 운동 카운터</h1><br><p align = "center"style="color:white">스마트 운동 카운터를 이용한 카운팅 결과를 그래프로 볼 수 있습니다.</p>
                 </div>
             </div>
             <div id="bd">
@@ -279,5 +279,8 @@
                         const myChart3 = new Chart(document.getElementById('myChart3'), config3);
                     </script>
                 </body>
-                    <button type="button"  onclick="location.href='index2.jsp'" id = "home" style="background-color: #fffadf;" >홈으로</button>
+                     <div class="logo" align = "center">
+                            <a href="index2.jsp"><img src="logo_120.png" alt=""></a>
+                        </div>
+                  <!--   <button type="button"  onclick="location.href='index2.jsp'" id = "home" style="background-color: #fffadf;" >홈으로</button> -->
             </html>
