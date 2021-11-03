@@ -40,7 +40,7 @@
 				MemberVO vo = (MemberVO)session.getAttribute("member");
 			%>
 
-<body> <!--class="animsition" -->
+<body> <!-- class= animsition -->
 	<script>
 		$("#id").removeAttr("href");
 	</script>
@@ -125,7 +125,7 @@
                                     <%
                                     	} else {
                                     %>
-                                    	<li><a title="Testimonial" class="animsition-link"><%=vo.getId()%>님 환영합니다.</a></li>
+                                    	<li><a href="#"title="Testimonial" class="animsition-link"><%=vo.getId()%>님 환영합니다.</a></li>
                                         <li><a href="Change.jsp" title="Testimonial" class="animsition-link">회원정보수정</a></li>
                                         <li><a href="Logout" title="Testimonial" class="animsition-link">로그아웃</a></li>
                                     
