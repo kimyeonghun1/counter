@@ -170,10 +170,8 @@
                             	for(int i=0; i<al.size(); i++){ %>
                             		
                             		<%=al.get(i).getR_COUNT()%>,
-                            		<%
-                         
+                            	<%
                             	}
-                          
                             	%>
                   
                             ]

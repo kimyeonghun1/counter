@@ -10,6 +10,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.MemberVO;
 
 @WebServlet("/targetUpdate")
 public class targetUpdate extends HttpServlet {
@@ -20,6 +23,8 @@ public class targetUpdate extends HttpServlet {
 
 		request.setCharacterEncoding("euc-kr");
 		
+		HttpSession session = request.getSession(); // 세션 객체 생성
+		MemberVO vo = (MemberVO)session.getAttribute("member"); // 현재 로그인한 사용자의(수정전) 정보
 
 		// 요청 데이터 받아주기
 		// 로그인 정보
