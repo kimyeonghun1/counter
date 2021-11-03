@@ -58,7 +58,7 @@
               <div class="invalid-feedback">
                 ID를 입력해주세요. 
               </div>
-             <input type="button" value="중복체크" onclick="idCheck()" required="required" style = "background-color :#cdff07 ">
+             <input type="button" value="중복체크" onclick="idCheck()" required="required" style = "background-color :light-grey ">
              <span id="sp_result"></span>
              <input type="hidden" id='chk' name = "chk" value="0">
             </div>
