@@ -322,7 +322,7 @@ public class MemberDAO {
 			try {
 				connection();
 
-				String sql = "select id,R_COUNT,day from history where id = ? and s_id='a0' ";
+				String sql = "select id,R_COUNT,day from history where id = ? and s_id='a0' order by day ";
 				// 필요한것만 가지고 오기 추천
 
 				// 3. sql 실행 객체(PrepapredStatement) 객체생성
