@@ -35,7 +35,7 @@
     }
 </style>
 </head>
-<body style="padding:30px; background-color : #F5F4B8">
+<body style="padding:30px;">
 	<h1 align= "center">오늘도 화이팅하세요(⌐■_■)</h1>
   <!-- calendar 태그 -->
   <div id='calendar-container'>
