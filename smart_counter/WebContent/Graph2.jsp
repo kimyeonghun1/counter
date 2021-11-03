@@ -1,3 +1,4 @@
+<%@page import="model.MemberVO"%>
 <%@page import="model.GraphVo"%>
 <%@page import="model.MemberDAO"%>
 <%@page import="java.util.ArrayList"%>
@@ -56,9 +57,15 @@
                     </div>
                     -->
                     
-                    <!-- JDBC(SELECT) -->
-                    <%
+                    
+                    
+                    
+		<%
 		//JDBC(Select)
+		
+		request.setCharacterEncoding("euc-kr");
+		session = request.getSession();
+		MemberVO vo = (MemberVO)session.getAttribute("member");
 		
 		Connection conn = null;
 		PreparedStatement psmt = null;

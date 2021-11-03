@@ -68,7 +68,9 @@ public class SensorDAO {
 		SensorVO vo = null;
 		conn();
 		System.out.println("디비 접속 성공");
+//		String sql1 = "update history set r_count =? where id='A' and s_id =?";
 		String sql1 = "update history set r_count =? where id='A' and s_id =?";
+		
 		int result = 0;
 		try {
 			psmt = conn.prepareStatement(sql1);
