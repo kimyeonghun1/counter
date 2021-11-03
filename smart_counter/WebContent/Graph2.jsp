@@ -203,7 +203,7 @@
                                 plugins: {
                                     title: {
                                         display: true,
-                                        text: '¿≠∏ˆ¿œ¿∏≈∞±‚'
+                                        text: '∆»±¡«Ù∆Ï±‚'
                                     }
                                 }
                             }
@@ -251,7 +251,7 @@
                                 plugins: {
                                     title: {
                                         display: true,
-                                        text: '∆»±¡«Ù∆Ï±‚'
+                                        text: '¿≠∏ˆ¿œ¿∏≈∞±‚'
                                     }
                                 }
                             }
