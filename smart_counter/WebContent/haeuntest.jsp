@@ -1,27 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-   pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+   pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset='utf-8' />
-  <!-- È­¸é ÇØ»óµµ¿¡ µû¶ó ±ÛÀÚ Å©±â ´ëÀÀ(¸ğ¹ÙÀÏ ´ëÀÀ) -->
+  <!-- í™”ë©´ í•´ìƒë„ì— ë”°ë¼ ê¸€ì í¬ê¸° ëŒ€ì‘(ëª¨ë°”ì¼ ëŒ€ì‘) -->
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <!-- jquery CDN -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- fullcalendar CDN -->
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
-  <!-- fullcalendar ¾ğ¾î CDN -->
+  <!-- fullcalendar ì–¸ì–´ CDN -->
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
 <style>
-  /* body ½ºÅ¸ÀÏ */
+  /* body ìŠ¤íƒ€ì¼ */
   html, body {
     overflow: hidden;
     font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
     font-size: 14px;
 
   }
-  /* Ä¶¸°´õ À§ÀÇ ÇØ´õ ½ºÅ¸ÀÏ(³¯Â¥°¡ ÀÖ´Â ºÎºĞ) */ 
+  /* ìº˜ë¦°ë” ìœ„ì˜ í•´ë” ìŠ¤íƒ€ì¼(ë‚ ì§œê°€ ìˆëŠ” ë¶€ë¶„) */ 
   .fc-header-toolbar {
     padding-top: 1em;
     padding-left: 1em;
@@ -35,8 +35,9 @@
     }
 </style>
 </head>
-<body style="padding:30px;">
-  <!-- calendar ÅÂ±× -->
+<body style="padding:30px; background-color : #F5F4B8">
+	<h1 align= "center">ì˜¤ëŠ˜ë„ í™”ì´íŒ…í•˜ì„¸ìš”(âŒâ– _â– )</h1>
+  <!-- calendar íƒœê·¸ -->
   <div id='calendar-container'>
     <div id='calendar'></div>
   </div>
@@ -50,41 +51,41 @@
 
   (function(){
     $(function(){
-      // calendar element Ãëµæ
+      // calendar element ì·¨ë“
       var calendarEl = $('#calendar')[0];
-      // full-calendar »ı¼ºÇÏ±â
+      // full-calendar ìƒì„±í•˜ê¸°
       var calendar = new FullCalendar.Calendar(calendarEl, {
-        height: '700px', // calendar ³ôÀÌ ¼³Á¤
-        expandRows: true, // È­¸é¿¡ ¸Â°Ô ³ôÀÌ Àç¼³Á¤
-        slotMinTime: '08:00', // Day Ä¶¸°´õ¿¡¼­ ½ÃÀÛ ½Ã°£
-        slotMaxTime: '20:00', // Day Ä¶¸°´õ¿¡¼­ Á¾·á ½Ã°£
-        // ÇØ´õ¿¡ Ç¥½ÃÇÒ Åø¹Ù
+        height: '700px', // calendar ë†’ì´ ì„¤ì •
+        expandRows: true, // í™”ë©´ì— ë§ê²Œ ë†’ì´ ì¬ì„¤ì •
+        slotMinTime: '08:00', // Day ìº˜ë¦°ë”ì—ì„œ ì‹œì‘ ì‹œê°„
+        slotMaxTime: '20:00', // Day ìº˜ë¦°ë”ì—ì„œ ì¢…ë£Œ ì‹œê°„
+        // í•´ë”ì— í‘œì‹œí•  íˆ´ë°”
         headerToolbar: {
           left: 'prev,next today',
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },
-        initialView: 'dayGridMonth', // ÃÊ±â ·Îµå µÉ¶§ º¸ÀÌ´Â Ä¶¸°´õ È­¸é(±âº» ¼³Á¤: ´Ş)
-        initialDate: null, // ÃÊ±â ³¯Â¥ ¼³Á¤ (¼³Á¤ÇÏÁö ¾ÊÀ¸¸é ¿À´Ã ³¯Â¥°¡ º¸ÀÎ´Ù.)
-        navLinks: true, // ³¯Â¥¸¦ ¼±ÅÃÇÏ¸é Day Ä¶¸°´õ³ª Week Ä¶¸°´õ·Î ¸µÅ©
-        editable: true, // ¼öÁ¤ °¡´É?
-        selectable: true, // ´Ş·Â ÀÏÀÚ µå·¡±× ¼³Á¤°¡´É
-        nowIndicator: true, // ÇöÀç ½Ã°£ ¸¶Å©
-        dayMaxEvents: true, // ÀÌº¥Æ®°¡ ¿À¹öµÇ¸é ³ôÀÌ Á¦ÇÑ (+ ¸î °³½ÄÀ¸·Î Ç¥Çö)
-        locale: 'ko', // ÇÑ±¹¾î ¼³Á¤
-        eventAdd: function(obj) { // ÀÌº¥Æ®°¡ Ãß°¡µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
+        initialView: 'dayGridMonth', // ì´ˆê¸° ë¡œë“œ ë ë•Œ ë³´ì´ëŠ” ìº˜ë¦°ë” í™”ë©´(ê¸°ë³¸ ì„¤ì •: ë‹¬)
+        initialDate: null, // ì´ˆê¸° ë‚ ì§œ ì„¤ì • (ì„¤ì •í•˜ì§€ ì•Šìœ¼ë©´ ì˜¤ëŠ˜ ë‚ ì§œê°€ ë³´ì¸ë‹¤.)
+        navLinks: true, // ë‚ ì§œë¥¼ ì„ íƒí•˜ë©´ Day ìº˜ë¦°ë”ë‚˜ Week ìº˜ë¦°ë”ë¡œ ë§í¬
+        editable: true, // ìˆ˜ì • ê°€ëŠ¥?
+        selectable: true, // ë‹¬ë ¥ ì¼ì ë“œë˜ê·¸ ì„¤ì •ê°€ëŠ¥
+        nowIndicator: true, // í˜„ì¬ ì‹œê°„ ë§ˆí¬
+        dayMaxEvents: true, // ì´ë²¤íŠ¸ê°€ ì˜¤ë²„ë˜ë©´ ë†’ì´ ì œí•œ (+ ëª‡ ê°œì‹ìœ¼ë¡œ í‘œí˜„)
+        locale: 'ko', // í•œêµ­ì–´ ì„¤ì •
+        eventAdd: function(obj) { // ì´ë²¤íŠ¸ê°€ ì¶”ê°€ë˜ë©´ ë°œìƒí•˜ëŠ” ì´ë²¤íŠ¸
           console.log(obj);
         },
-        eventChange: function(obj) { // ÀÌº¥Æ®°¡ ¼öÁ¤µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
+        eventChange: function(obj) { // ì´ë²¤íŠ¸ê°€ ìˆ˜ì •ë˜ë©´ ë°œìƒí•˜ëŠ” ì´ë²¤íŠ¸
           console.log(obj);
         },
-        eventRemove: function(obj){ // ÀÌº¥Æ®°¡ »èÁ¦µÇ¸é ¹ß»ıÇÏ´Â ÀÌº¥Æ®
+        eventRemove: function(obj){ // ì´ë²¤íŠ¸ê°€ ì‚­ì œë˜ë©´ ë°œìƒí•˜ëŠ” ì´ë²¤íŠ¸
           console.log(obj);
         },
-        select: function(arg) { // Ä¶¸°´õ¿¡¼­ µå·¡±×·Î ÀÌº¥Æ®¸¦ »ı¼ºÇÒ ¼ö ÀÖ´Ù.
-          var title = alert('Ãâ¼®Ã¼Å©¿Ï·á');
+        select: function(arg) { // ìº˜ë¦°ë”ì—ì„œ ë“œë˜ê·¸ë¡œ ì´ë²¤íŠ¸ë¥¼ ìƒì„±í•  ìˆ˜ ìˆë‹¤.
+          var title = alert('ì¶œì„ì²´í¬ì™„ë£Œ');
             calendar.addEvent({
-              title: 'Âü ÀßÇß¾î¿ä',
+              title: 'ì°¸ ì˜í–ˆì–´ìš”',
               start: arg.start,
               end: arg.end,
               allDay: arg.allDay
@@ -97,13 +98,13 @@
         events :[]
         
       });
-      // Ä¶¸°´õ ·£´õ¸µ
+      // ìº˜ë¦°ë” ëœë”ë§
       calendar.render();
     });
   })();
 </script>
 <br><br>
-	<div class="logo" align="center">
+	<div class="logo" align="center" >
 		<a href="index2.jsp"><img src="logo_120.png" alt=""></a>
 	</div>
 
