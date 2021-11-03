@@ -40,7 +40,7 @@
 				MemberVO vo = (MemberVO)session.getAttribute("member");
 			%>
 
-<body class="animsition">
+<body> <!--class="animsition" -->
 	<script>
 		$("#id").removeAttr("href");
 	</script>
@@ -115,7 +115,7 @@
                                         <li><a href="haeuntest.jsp" title="Testimonial" class="animsition-link">출석도장</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="signin.html" title="Contact Us" class="animsition-link">로그인</a>
+                                <li><a href="#" title="Contact Us" class="animsition-link">로그인</a>
                                     <ul>
                                     <%
                                     	if (vo == null) {
@@ -163,7 +163,7 @@
     </div>
     						<!-- 자세링크 앵커태그  -->
                         	<a id="link"></a>
-                        	<br><br><br><br>
+                        	<br><br><br><br><br><br><br>
     <div class="space-medium">
         <div class="container">
             <div class="row">  
@@ -206,7 +206,7 @@
     <div class="space-medium">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="outline pinside80 team-block">
                         <div class="row">
                             <div class="container">
@@ -258,13 +258,12 @@
                                                  턱걸이<label for="chinning" class="sr-only">턱걸이</label>
                                         <input name="pull" type="password" id="chinning" class="form-control" required>
                                        
-                                        </div>
                                         <!-- bootstrap 사용법   style속성 추가해서 사용-->
                                         <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()" style="background-color:#cdff07; border-color: #c5f016; color: #0e0e0e;">전송</button>
                                         <button class="btn btn-lg btn-primary btn-block" type="reset" style="background-color:#cdff07; border-color: #c5f016; color: #0e0e0e;">리셋</button>
                                         
                                       </form>
-                                      </div>
+                                     </div>
                                       	<script>
 		
 											function Test() {
@@ -284,7 +283,8 @@
                                     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
                                 </body>
                                 </html>
-                        </div>
+                            </div>
+                       </div>
                     </div>
                 </div>
             </div>
