@@ -55,18 +55,18 @@ ArrayList<MemberVO> al = dao.selectAll();
 	crossorigin="anonymous">
 
 
-<body>
+<body style = "background-color : gray;">
 
 
 	<div class="container">
-		<div class="input-form">
-		<div class="row justify-content-center">
-			<div class="col-10">
+	
+		
+			<div class="col-12" >
 
 
 
-				<h2 align="center" id="a"  class="p-3 mb-2 bg-warning text-dark">회원정보관리</h2>
-				<table class="table table-warning table-striped" border-spacing = "10px" >
+				<h2 align="center" id="a"  class="p-3 mb-2 bg-dark text-white">회원정보관리</h2>
+				<table class="table table-secondary table-striped " border-spacing = "10px" >
 					<thead>
 						<tr>
 							<th align = "center" scope="col" ></th>
@@ -88,12 +88,14 @@ ArrayList<MemberVO> al = dao.selectAll();
 						</table>
 						
 						
-				<form action="Home.jsp" >
-				<button  type="submit" class="btn btn-warning btn btn-primary btn-lg" >홈으로</button>
-				</form>
-			</div>
+			<!-- 	<form action="Home.jsp" >
+				<button  type="submit" class="btn btn-secondary btn btn-primary btn-lg" >홈으로</button>
+				</form> -->
+		<div class="logo" align="center" >
+		<a href="index2.jsp"><img src="logo_120.png" alt=""></a>
 		</div>
-	</div>
+			</div>
+	
 	</div>
 
 </body>
