@@ -44,10 +44,10 @@
 <body>
 
 	<form action="#" method="post">
-  <div class="container">
+   <div class="container">
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
-
+ 
         <h4 class="mb-3">회원가입</h4>
         <form class="validation-form" novalidate>
           <div class="row">
