@@ -256,7 +256,7 @@
                                                 윗몸일으키기<label for="sit-up" class="sr-only">윗몸일으키기</label>
                                         <input name="sit" type="text" id="push-ups" class="form-control" required>
                                                  턱걸이<label for="chinning" class="sr-only">턱걸이</label>
-                                        <input name="pull" type="password" id="chinning" class="form-control" required>
+                                        <input name="pull" type="text" id="chinning" class="form-control" required>
                                        
                                         <!-- bootstrap 사용법   style속성 추가해서 사용-->
                                         <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="Test()" style="background-color:#cdff07; border-color: #c5f016; color: #0e0e0e;">전송</button>

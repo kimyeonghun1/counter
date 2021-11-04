@@ -1,3 +1,4 @@
+<%@page import="controller.GraphDAO"%>
 <%@page import="model.MemberVO"%>
 <%@page import="model.GraphVo"%>
 <%@page import="model.MemberDAO"%>
@@ -7,46 +8,54 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTDHTML4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html id="id_html">
-    <head>
-        <title>Full Secondary Column, 1/3 x 1/3 x 1/3 Main Column.</title>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/Graph2styles.css">
-    </head>
-    <body>
-        <div id="doc3" class="yui-t7">
-            <div id="hd">
-                <div id="header">
-                <br>
-                    <h1 align = "center"style="color:white">스마트 운동 카운터</h1><br><p align = "center"style="color:white">스마트 운동 카운터를 이용한 카운팅 결과를 그래프로 볼 수 있습니다.</p>
-                </div>
-            </div>
-            <div id="bd">
-                <div id="yui-main">
-                    <div class="yui-b">
-                        <div class="yui-gb">
-                            <div class="yui-u first">
-                                <div class="content">
-                                    <canvas id="myChart"></div>
-                                </div>
-                                <div class="yui-u">
-                                    <div class="content">
-                                        <canvas id="myChart2"></canvas>
-                                    </div>
-                                </div>
-                                <div class="yui-u">
-                                    <div class="content">
-                                        <canvas id="myChart3"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--
+<head>
+<title>Full Secondary Column, 1/3 x 1/3 x 1/3 Main Column.</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="css/Graph2styles.css">
+</head>
+<body>
+	<div id="doc3" class="yui-t7">
+		<div id="hd">
+			<div id="header">
+				<br>
+				<h1 align="center" style="color: white">스마트 운동 카운터</h1>
+				<br>
+				<p align="center" style="color: white">스마트 운동 카운터를 이용한 카운팅 결과를
+					그래프로 볼 수 있습니다.</p>
+			</div>
+		</div>
+		<div id="bd">
+			<div id="yui-main">
+				<div class="yui-b">
+					<div class="yui-gb">
+						<div class="yui-u first">
+							<div class="content">
+								<canvas id="myChart">
+							</div>
+						</div>
+						<div class="yui-u">
+							<div class="content">
+								<canvas id="myChart2"></canvas>
+							</div>
+						</div>
+						<div class="yui-u">
+							<div class="content">
+								<canvas id="myChart3"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--
                         <div class="yui-b">
                           <div id="secondary">Secondary Column</div>
                         </div>
@@ -56,90 +65,38 @@
                       </div>
                     </div>
                     -->
-                    
-                    
-                    
-                    
-		<%
-		//JDBC(Select)
-		
-		request.setCharacterEncoding("euc-kr");
-		session = request.getSession();
-		MemberVO vo = (MemberVO)session.getAttribute("member");
-		
-		Connection conn = null;
-		PreparedStatement psmt = null;
-		ResultSet rs = null;
-		String push_tgt = "";
-		String sit_tgt = "";
-		String pull_tgt = "";
-		
 
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			
-			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-			String dbid = "campus_a_5_1025";
-			String dbpw = "smhrd5";
-			
-			conn = DriverManager.getConnection(url, dbid, dbpw);
-			
-			//1
-			String sql = "SELECT T_COUNT FROM event WHERE S_ID = 'a0'";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			while(rs.next()) {
-				push_tgt = rs.getString(1);
-			}
 
-			//2
-			sql = "SELECT T_COUNT FROM event WHERE S_ID = 'b0'";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			while(rs.next()) {
-				sit_tgt = rs.getString(1);
-			}
+
+
+			<%
+				//JDBC(Select)
+			GraphDAO gdao = new GraphDAO();
+
+			// 목표갯수
+			String[] event = gdao.get();
+			String push_tgt = event[0];
+			String sit_tgt = event[1];
+			String pull_tgt = event[2];
+
+			MemberVO vo = (MemberVO) session.getAttribute("member");
+			String id = vo.getId();
+			ArrayList<GraphVo> a0 = gdao.R_COUNT(id, "a0");
 			
-			//3
-			sql = "SELECT T_COUNT FROM event WHERE S_ID = 'c0'";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-			while(rs.next()) {
-				pull_tgt = rs.getString(1);
-			}
+			ArrayList<GraphVo> b0 = gdao.R_COUNT(id, "b0");
 			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			
-			try {
-				if(rs!=null) {
-					rs.close();
-				}
-				if(psmt!=null) {
-					psmt.close();
-				}
-				if(conn!=null) {
-					conn.close();
-				}
-				
-			}catch(Exception e2) {
-				e2.printStackTrace();
-			}
-		}
-	   %>	
-	   
-	   
-	   <% 
-	   GraphVo gvo;
-	   
-	   MemberDAO dao = new MemberDAO();
-	   ArrayList<GraphVo> al = dao.R_COUNT("A");
-	   
-	   %>
-	   
-                    <script>
+			ArrayList<GraphVo> c0 = gdao.R_COUNT(id, "c0");
+			%>
+
+
+			<%
+				/* 	   GraphVo gvo;
+				   
+				   MemberDAO dao = new MemberDAO();
+				   ArrayList<GraphVo> al = dao.R_COUNT("A"); */
+			%>
+
+			<script>
                     
                     
                         // === include 'setup' then 'config' above ===
@@ -151,46 +108,35 @@
                             backgroundColor: 'rgb(0, 0, 0)',
                             borderColor: 'rgb(0, 0, 0)',
                             type: 'line',
-                            data: [
-                            	
-                            	<%
-                            	for(int i=0; i<al.size(); i++){ %>
-                            		
-                            		<%=push_tgt%>,
-                            		
-                            		<%
-                            		
-                            	}
-                            	
-                            	
-                            	%>
-           
-                            ]
+                            data: []
                         };
+                            	<%for (int i = 0; i < a0.size(); i++) {%>
+                            		
+                            		data1.data.push('<%=push_tgt%>');
+                            		<%}%>
                         var data2 = {
                             label: '실제갯수',
                             backgroundColor: 'rgb(255, 0, 0)',
                             borderColor: 'rgb(255, 0, 0)',
                             data: [
                             	
-                            	<%
-                            	for(int i=0; i<al.size(); i++){ %>
-                            		
-                            		<%=al.get(i).getR_COUNT()%>,
-                            	<%
-                            	}
-                            	%>
                   
                             ]
                         };
+                            	<%for (int i = 0; i < a0.size(); i++) {%>
+                            		
+                            	data2.data.push('<%=a0.get(i).getR_COUNT()%>');
+                            		
+                            	<%}%>
                         const labels = [];
                         
-                        <%for(int i=0; i<al.size(); i++){%>
+                        <%for (int i = 0; i < a0.size(); i++) {%>
                         
-                    	labels.push("<%=al.get(i).getDate()%>")
-                    		
-                    		
+                    	labels.push("<%=a0.get(i).getDate()%>")
+                    	
+                    	console.log('<%=a0.get(i).getDate()%>');
                     	<%}%>
+                    	console.log('<%=a0.size()%>');
                         const Adata = {
                             labels: labels,
                             datasets: [data1, data2]
@@ -208,7 +154,6 @@
                                 }
                             }
                         };
-                        const myChart = new Chart(document.getElementById('myChart'), config);
                         // ////////////////////////////
                         var data3 = {
                             label: '목표갯수',
@@ -216,29 +161,24 @@
                             borderColor: 'rgb(0, 0, 0)',
                             type: 'line',
                             data: [
-                            	sit_tgt,
-                            	sit_tgt,
-                            	sit_tgt,
-                            	sit_tgt,
-                            	sit_tgt,
-                            	sit_tgt,
-                            	sit_tgt
+                            	
                             ]
                         };
+                            	<%for (int i = 0; i < b0.size(); i++) {%>
+                            		
+                            		data3.data.push('<%=sit_tgt%>')
+                            		
+                            		<%}%>
                         var data4 = {
                             label: '실제갯수',
                             backgroundColor: 'rgb(255, 0, 0)',
                             borderColor: 'rgb(255, 0, 0)',
                             data: [
-                                50,
-                                25,
-                                45,
-                                30,
-                                15,
-                                35,
-                                45
                             ]
                         };
+                            	<%for (int i = 0; i < b0.size(); i++) {%>
+                            	data4.data.push('<%=b0.get(i).getR_COUNT()%>')
+                            	<%}%>
                         const Adata2 = {
                             labels: labels,
                             datasets: [data3, data4]
@@ -256,7 +196,6 @@
                                 }
                             }
                         };
-                        const myChart2 = new Chart(document.getElementById('myChart2'), config2);
                         // ///////////////////////////////
                         var data5 = {
                             label: '목표갯수',
@@ -264,29 +203,24 @@
                             borderColor: 'rgb(0, 0, 0)',
                             type: 'line',
                             data: [
-                            	pull_tgt,
-                            	pull_tgt,
-                            	pull_tgt,
-                            	pull_tgt,
-                            	pull_tgt,
-                            	pull_tgt,
-                            	pull_tgt
                             ]
                         };
+                            	<%for (int i = 0; i < c0.size(); i++) {%>
+                            		
+                            		data5.data.push(<%=pull_tgt%>);
+                            		
+                            		<%}%>
                         var data6 = {
                             label: '실제개수',
                             backgroundColor: 'rgb(255, 0, 0)',
                             borderColor: 'rgb(255, 0, 0)',
                             data: [
-                                20,
-                                5,
-                                35,
-                                14,
-                                7,
-                                15,
-                                5
                             ]
                         };
+                            	<%for (int i = 0; i < c0.size(); i++) {%>
+                            		
+                            		data6.data.push(<%=c0.get(i).getR_COUNT()%>);
+                            	<%}%>
                         const Adata3 = {
                             labels: labels,
                             datasets: [data5, data6]
@@ -304,11 +238,13 @@
                                 }
                             }
                         };
-                        const myChart3 = new Chart(document.getElementById('myChart3'), config3);
+                        const myChart1 = new Chart(document.getElementById('myChart').getContext('2d'), config);
+                     	const myChart2 = new Chart(document.getElementById('myChart2'), config2);
+                        const myChart3 = new Chart(document.getElementById('myChart3'), config3); 
                     </script>
-                </body>
-                     <div class="logo" align = "center">
-                            <a href="index2.jsp"><img src="logo_120.png" alt=""></a>
-                        </div>
-                  <!--   <button type="button"  onclick="location.href='index2.jsp'" id = "home" style="background-color: #fffadf;" >홈으로</button> -->
-            </html>
+</body>
+<div class="logo" align="center">
+	<a href="index2.jsp"><img src="logo_120.png" alt=""></a>
+</div>
+<!--   <button type="button"  onclick="location.href='index2.jsp'" id = "home" style="background-color: #fffadf;" >홈으로</button> -->
+</html>
