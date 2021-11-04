@@ -28,7 +28,6 @@
 			<div id="header">
 				<br>
 				<h1 align="center" style="color: white">스마트 운동 카운터</h1>
-				<br>
 				<p align="center" style="color: white">스마트 운동 카운터를 이용한 카운팅 결과를
 					그래프로 볼 수 있습니다.</p>
 			</div>
@@ -36,7 +35,7 @@
 		<div id="bd">
 			<div id="yui-main">
 				<div class="yui-b">
-					<div class="yui-gb">
+					<div class="yui-gb" style="height :75px">
 						<div class="yui-u first">
 							<div class="content">
 								<canvas id="myChart">
@@ -103,6 +102,8 @@
                         var push_tgt ="<%=push_tgt%>"; 
                         var sit_tgt ="<%=sit_tgt%>"; 
                         var pull_tgt ="<%=pull_tgt%>"; 
+                        
+                        
                         var data1 = {
                             label: '목표갯수',
                             backgroundColor: 'rgb(0, 0, 0)',
@@ -128,7 +129,10 @@
                             	data2.data.push('<%=a0.get(i).getR_COUNT()%>');
                             		
                             	<%}%>
+                            	// 다른것들도 라벨 추가해야함
                         const labels = [];
+                        const labels2 = [];
+                        const labels3 = [];
                         
                         <%for (int i = 0; i < a0.size(); i++) {%>
                         
@@ -154,6 +158,9 @@
                                 }
                             }
                         };
+                        
+                        
+                        
                         // ////////////////////////////
                         var data3 = {
                             label: '목표갯수',
@@ -179,8 +186,21 @@
                             	<%for (int i = 0; i < b0.size(); i++) {%>
                             	data4.data.push('<%=b0.get(i).getR_COUNT()%>')
                             	<%}%>
+                        		
+                                 // label
+                                 
+                                 /* const labels = []; */
+                                 
+                                <%for (int i = 0; i < b0.size(); i++) {%>
+                                 
+                             	labels2.push("<%=b0.get(i).getDate()%>")
+                             	
+                             	console.log('<%=b0.get(i).getDate()%>');
+                             	<%}%>    	
+                             	console.log('<%=b0.size()%>');
+                            	
                         const Adata2 = {
-                            labels: labels,
+                            labels: labels2,
                             datasets: [data3, data4]
                         };
                         const config2 = {
@@ -196,6 +216,10 @@
                                 }
                             }
                         };
+                        
+                        
+                        
+                        
                         // ///////////////////////////////
                         var data5 = {
                             label: '목표갯수',
@@ -221,8 +245,19 @@
                             		
                             		data6.data.push(<%=c0.get(i).getR_COUNT()%>);
                             	<%}%>
+                            	// 라벨
+                            	/* const labels = []; */
+                                
+                                 <%for (int i = 0; i < c0.size(); i++) {%>
+                                
+                            	labels3.push("<%=c0.get(i).getDate()%>")
+                            	
+                            	console.log('<%=c0.get(i).getDate()%>');
+                            	<%}%>    	
+                            	console.log('<%=c0.size()%>');
+                            	
                         const Adata3 = {
-                            labels: labels,
+                            labels: labels3,
                             datasets: [data5, data6]
                         };
                         const config3 = {
